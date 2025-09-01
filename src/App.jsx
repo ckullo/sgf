@@ -5,8 +5,6 @@ import About from './components/About'
 import Milestones from './components/Milestones'
 import Products from './components/Products'
 import Facility from './components/Facility'
-import Team from './components/Team'
-import Clients from './components/Clients'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
@@ -20,8 +18,6 @@ function App() {
         <Milestones />
         <Products />
         <Facility />
-        <Team />
-        <Clients />
         <Contact />
       </main>
       <Footer />

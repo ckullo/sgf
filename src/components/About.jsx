@@ -6,18 +6,18 @@ const About = () => {
   const features = [
     {
       icon: <FaAward className="text-4xl text-primary" />,
-      title: "Certified Excellence",
-      description: "LKPP certified vendor with proven track record"
+      title: "Keunggulan Bersertifikat",
+      description: "Vendor bersertifikat LKPP dengan rekam jejak terbukti"
     },
     {
       icon: <FaUsers className="text-4xl text-primary" />,
-      title: "Expert Team",
-      description: "Professional team with extensive experience"
+      title: "Tim Ahli",
+      description: "Tim profesional dengan pengalaman luas"
     },
     {
       icon: <FaHandshake className="text-4xl text-primary" />,
-      title: "Trusted Partner",
-      description: "Building long-term partnerships with clients"
+      title: "Mitra Terpercaya",
+      description: "Membangun kemitraan jangka panjang dengan klien"
     }
   ]
 
@@ -31,9 +31,9 @@ const About = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">About SGF Indonesia</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Tentang PT Sano Gratia Farma</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Leading the way in government procurement solutions with integrity and excellence
+            Memimpin solusi pengadaan pemerintah dengan integritas dan keunggulan
           </p>
         </motion.div>
 
@@ -44,31 +44,31 @@ const About = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-3xl font-semibold mb-6">Our Story</h3>
+            <h3 className="text-3xl font-semibold mb-6">Cerita Kami</h3>
             <p className="text-gray-600 mb-4">
-              SGF Indonesia has been at the forefront of government procurement services 
-              since our establishment. We specialize in providing comprehensive solutions 
-              that meet LKPP requirements and help businesses navigate the complex landscape 
-              of government tenders.
+              PT Sano Gratia Farma telah berada di garis depan layanan pengadaan pemerintah 
+              sejak didirikan. Kami mengkhususkan diri dalam menyediakan solusi komprehensif 
+              yang memenuhi persyaratan LKPP dan membantu bisnis menavigasi lanskap kompleks 
+              tender pemerintah.
             </p>
             <p className="text-gray-600 mb-6">
-              Our commitment to transparency, quality, and customer satisfaction has made us 
-              a trusted partner for numerous government agencies and private sector clients 
-              across Indonesia.
+              Komitmen kami terhadap transparansi, kualitas, dan kepuasan pelanggan telah menjadikan kami 
+              mitra terpercaya bagi berbagai instansi pemerintah dan klien sektor swasta 
+              di seluruh Indonesia.
             </p>
             
             <div className="space-y-3">
               <div className="flex items-center">
                 <FaCheckCircle className="text-primary mr-3" />
-                <span>Over 10 years of industry experience</span>
+                <span>Lebih dari 10 tahun pengalaman industri</span>
               </div>
               <div className="flex items-center">
                 <FaCheckCircle className="text-primary mr-3" />
-                <span>Successfully completed 500+ projects</span>
+                <span>Berhasil menyelesaikan 500+ proyek</span>
               </div>
               <div className="flex items-center">
                 <FaCheckCircle className="text-primary mr-3" />
-                <span>Serving clients nationwide</span>
+                <span>Melayani klien di seluruh Indonesia</span>
               </div>
             </div>
           </motion.div>
@@ -102,17 +102,17 @@ const About = () => {
           className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8"
         >
           <div className="bg-white p-8 rounded-lg shadow-lg">
-            <h3 className="text-2xl font-semibold mb-4">Our Vision</h3>
+            <h3 className="text-2xl font-semibold mb-4">Visi Kami</h3>
             <p className="text-gray-600">
-              To be the leading provider of government procurement solutions in Indonesia, 
-              setting the standard for excellence, integrity, and innovation in the industry.
+              Menjadi penyedia terkemuka solusi pengadaan pemerintah di Indonesia, 
+              menetapkan standar keunggulan, integritas, dan inovasi dalam industri.
             </p>
           </div>
           <div className="bg-white p-8 rounded-lg shadow-lg">
-            <h3 className="text-2xl font-semibold mb-4">Our Mission</h3>
+            <h3 className="text-2xl font-semibold mb-4">Misi Kami</h3>
             <p className="text-gray-600">
-              To deliver exceptional procurement services that empower businesses to succeed 
-              in government tenders while maintaining the highest standards of compliance and ethics.
+              Memberikan layanan pengadaan luar biasa yang memberdayakan bisnis untuk berhasil 
+              dalam tender pemerintah sambil mempertahankan standar kepatuhan dan etika tertinggi.
             </p>
           </div>
         </motion.div>
