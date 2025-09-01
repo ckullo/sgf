@@ -1,0 +1,245 @@
+import React, { useState } from 'react'
+import { motion } from 'framer-motion'
+import { useForm } from 'react-hook-form'
+import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock, FaWhatsapp, FaFax } from 'react-icons/fa'
+import { companyInfo } from '../data/content'
+
+const Contact = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitMessage, setSubmitMessage] = useState('')
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset
+  } = useForm()
+
+  const onSubmit = async (data) => {
+    setIsSubmitting(true)
+    // Simulate form submission
+    await new Promise(resolve => setTimeout(resolve, 2000))
+    console.log('Form Data:', data)
+    setSubmitMessage('Thank you for your message. We will get back to you soon!')
+    setIsSubmitting(false)
+    reset()
+    setTimeout(() => setSubmitMessage(''), 5000)
+  }
+
+  const contactInfo = [
+    {
+      icon: <FaMapMarkerAlt />,
+      title: "Head Office",
+      content: [
+        companyInfo.contact.address.street,
+        companyInfo.contact.address.area,
+        `${companyInfo.contact.address.city}, ${companyInfo.contact.address.province} ${companyInfo.contact.address.postalCode}`,
+        companyInfo.contact.address.country
+      ]
+    },
+    {
+      icon: <FaPhone />,
+      title: "Phone",
+      content: [companyInfo.contact.phone]
+    },
+    {
+      icon: <FaFax />,
+      title: "Fax",
+      content: [companyInfo.contact.fax]
+    },
+    {
+      icon: <FaEnvelope />,
+      title: "Email",
+      content: [companyInfo.contact.email]
+    },
+    {
+      icon: <FaClock />,
+      title: "Business Hours",
+      content: [
+        `Weekdays: ${companyInfo.contact.businessHours.weekdays}`,
+        `Saturday: ${companyInfo.contact.businessHours.saturday}`,
+        `Sunday: ${companyInfo.contact.businessHours.sunday}`
+      ]
+    }
+  ]
+
+  return (
+    <section id="contact" className="py-20 bg-white">
+      <div className="container-custom">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Contact Us</h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Get in touch with us for procurement solutions and consultations
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* Contact Form */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <div className="bg-gray-50 p-8 rounded-lg">
+              <h3 className="text-2xl font-semibold mb-6">Send Us a Message</h3>
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Full Name *
+                    </label>
+                    <input
+                      type="text"
+                      {...register('name', { required: 'Name is required' })}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                      placeholder="John Doe"
+                    />
+                    {errors.name && (
+                      <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
+                    )}
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Company
+                    </label>
+                    <input
+                      type="text"
+                      {...register('company')}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                      placeholder="Your Company"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Email *
+                    </label>
+                    <input
+                      type="email"
+                      {...register('email', {
+                        required: 'Email is required',
+                        pattern: {
+                          value: /^\S+@\S+$/i,
+                          message: 'Invalid email address'
+                        }
+                      })}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                      placeholder="john@example.com"
+                    />
+                    {errors.email && (
+                      <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+                    )}
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Phone
+                    </label>
+                    <input
+                      type="tel"
+                      {...register('phone')}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                      placeholder="+62 812 3456 7890"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Subject *
+                  </label>
+                  <input
+                    type="text"
+                    {...register('subject', { required: 'Subject is required' })}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                    placeholder="How can we help you?"
+                  />
+                  {errors.subject && (
+                    <p className="text-red-500 text-sm mt-1">{errors.subject.message}</p>
+                  )}
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Message *
+                  </label>
+                  <textarea
+                    {...register('message', { required: 'Message is required' })}
+                    rows="5"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                    placeholder="Tell us about your project..."
+                  ></textarea>
+                  {errors.message && (
+                    <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>
+                  )}
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                </button>
+
+                {submitMessage && (
+                  <p className="text-green-600 text-center mt-4">{submitMessage}</p>
+                )}
+              </form>
+            </div>
+          </motion.div>
+
+          {/* Contact Information */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <div className="space-y-6">
+              {contactInfo.map((info, index) => (
+                <div key={index} className="flex items-start">
+                  <div className="text-2xl text-primary mr-4 mt-1">{info.icon}</div>
+                  <div>
+                    <h4 className="text-lg font-semibold mb-2">{info.title}</h4>
+                    {info.content.map((line, i) => (
+                      <p key={i} className="text-gray-600">{line}</p>
+                    ))}
+                  </div>
+                </div>
+              ))}
+
+              {/* WhatsApp Button */}
+              <div className="mt-8">
+                <a
+                  href="https://wa.me/6281234567890"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition-colors duration-300"
+                >
+                  <FaWhatsapp className="mr-2 text-xl" />
+                  Chat on WhatsApp
+                </a>
+              </div>
+
+              {/* Map Placeholder */}
+              <div className="mt-8 bg-gray-200 h-64 rounded-lg flex items-center justify-center">
+                <p className="text-gray-500">Map Integration Here</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default Contact
