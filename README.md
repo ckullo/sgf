@@ -1,169 +1,109 @@
-# SGF Indonesia Company Profile Website
+# PT Sano Gratia Farma - Company Profile Website
 
-A modern, responsive React-based company profile website for SGF Indonesia, specializing in government procurement solutions and LKPP requirements.
+Official company profile website for PT Sano Gratia Farma, a leading pharmaceutical company in Indonesia.
 
-## 🚀 Features
+## 🏥 About PT Sano Gratia Farma
 
-- **Responsive Design**: Fully responsive layout that works on desktop, tablet, and mobile devices
-- **Modern UI/UX**: Clean and professional design with smooth animations
-- **Contact Form**: Functional contact form with validation
-- **Portfolio Showcase**: Display of completed projects with filtering capabilities
-- **Team Section**: Professional team member profiles
-- **Client Testimonials**: Customer feedback and success stories
-- **SEO Optimized**: Built with SEO best practices in mind
+PT Sano Gratia Farma memulai pendistribusian produk perdana di bulan September 2017 dengan produk Salep Krim Pi Kang Shuang 5gr, sampai saat ini kami telah memasarkan produk TKS dan Solvopain di Indonesia.
 
-## 📋 Prerequisites
+### Vision
+Menjadi Perusahaan Farmasi terbaik yang mampu memberikan kontribusi positif bagi masyarakat dalam penyediaan produk kesehatan.
 
-- Node.js (v14.0.0 or higher)
-- npm or yarn package manager
+### Mission
+Menghasilkan produk kesehatan yang efektif, terjangkau agar masyarakat mendapat kemudahan untuk hidup yang lebih sehat dan berkualitas.
 
-## 🛠️ Installation
+## 🌟 Features
 
-1. Navigate to the project directory:
+- **Company Overview**: Introduction, vision, mission, and values
+- **Product Showcase**: Detailed information about our pharmaceutical products
+- **Company Milestones**: Timeline of achievements from 2013 to present
+- **Manufacturing Facility**: Information about our CPOB-standard production facility
+- **Certifications**: BPOM, Halal MUI, CPOB, TKDN certifications
+- **Contact Information**: Complete contact details and location
+
+## 💊 Our Products
+
+1. **Krim Pi Kang Shuang** (5g) - DKL1842200229A1
+2. **TKS Krim Anti Jamur** (10g) - DTL1842200129A1
+3. **Solvopain Krim** (10g) - QD171715591
+
+## 🏆 Certifications
+
+- ✅ BPOM Registered
+- ✅ Halal MUI Grade A (Certificate No: LPPOM-00140130691021)
+- ✅ CPOB Standards
+- ✅ TKDN Certified
+- ✅ BPJPH Halal
+
+## 🚀 Tech Stack
+
+- **React** - UI library
+- **Vite** - Build tool
+- **Tailwind CSS** - Styling
+- **Framer Motion** - Animations
+- **React Hook Form** - Form handling
+- **React Icons** - Icon library
+
+## 📦 Installation
+
 ```bash
+# Clone the repository
+git clone https://github.com/[your-username]/sgf-company-profile.git
+
+# Navigate to project directory
 cd sgf-company-profile
-```
 
-2. Install dependencies:
-```bash
+# Install dependencies
 npm install
-```
 
-## 🏃‍♂️ Running the Application
-
-### Development Mode
-```bash
+# Run development server
 npm run dev
-```
-The application will be available at `http://localhost:3000`
 
-### Production Build
-```bash
+# Build for production
 npm run build
 ```
 
-### Preview Production Build
-```bash
-npm run preview
-```
-
-## 📁 Project Structure
+## 🏗️ Project Structure
 
 ```
 sgf-company-profile/
 ├── src/
-│   ├── components/       # React components
-│   │   ├── Header.jsx
+│   ├── components/      # React components
 │   │   ├── Hero.jsx
 │   │   ├── About.jsx
-│   │   ├── Services.jsx
-│   │   ├── Portfolio.jsx
-│   │   ├── Team.jsx
-│   │   ├── Clients.jsx
-│   │   ├── Contact.jsx
-│   │   └── Footer.jsx
-│   ├── data/            # Content configuration
-│   │   └── content.js   # All website content (easy to modify)
-│   ├── App.jsx          # Main application component
-│   ├── main.jsx         # Application entry point
-│   └── index.css        # Global styles and Tailwind imports
-├── public/              # Static assets
-├── index.html           # HTML entry point
-├── package.json         # Project dependencies
-├── vite.config.js       # Vite configuration
-├── tailwind.config.js   # Tailwind CSS configuration
-└── postcss.config.js    # PostCSS configuration
+│   │   ├── Products.jsx
+│   │   ├── Milestones.jsx
+│   │   ├── Facility.jsx
+│   │   └── ...
+│   ├── data/
+│   │   └── content.js   # All website content
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+├── public/
+├── package.json
+├── vite.config.js
+├── tailwind.config.js
+└── postcss.config.js
 ```
 
-## 🎨 Customization
+## 📞 Contact Information
 
-### Updating Content
+**PT Sano Gratia Farma**
+- 📍 Jalan East Boulevard Blok E no.3, Kawasan JABABEKA VI, Cikarang Timur, Bekasi 17530
+- 📞 +62-21-8932-3051
+- 📠 +62-21-8932-3052
+- 📧 Sales@sanogratiafarma.com
 
-All website content can be easily modified in the `src/data/content.js` file. This includes:
+## 🔗 Verification Links
 
-- Company information
-- About section content
-- Services descriptions
-- Team member profiles
-- Client list
-- Portfolio projects
-- Testimonials
-
-### Changing Colors
-
-To change the website color scheme, edit the `tailwind.config.js` file:
-
-```javascript
-theme: {
-  extend: {
-    colors: {
-      primary: '#2563eb',    // Change primary color
-      secondary: '#1e40af',  // Change secondary color
-      accent: '#3b82f6',     // Change accent color
-    }
-  }
-}
-```
-
-### Adding New Sections
-
-1. Create a new component in `src/components/`
-2. Import and add it to `src/App.jsx`
-3. Add navigation link in `src/components/Header.jsx`
-
-## 🔧 Technologies Used
-
-- **React 18** - JavaScript library for building user interfaces
-- **Vite** - Fast build tool and development server
-- **Tailwind CSS** - Utility-first CSS framework
-- **React Router** - Client-side routing
-- **Framer Motion** - Animation library
-- **React Hook Form** - Form handling and validation
-- **React Icons** - Icon library
-
-## 📱 Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
+- [Verify BPOM Registration](https://cekbpom.pom.go.id)
+- [Verify Halal MUI](https://halalmui.org/search-product)
 
 ## 📄 License
 
-This project is proprietary and confidential. All rights reserved by SGF Indonesia.
-
-## 📞 Contact
-
-For any questions or support, please contact:
-- Email: info@sgfindonesia.com
-- Phone: +62 21 1234 5678
-- Website: https://sgfindonesia.com
-
-## 🚀 Deployment
-
-### Deploy to Vercel
-
-1. Install Vercel CLI: `npm i -g vercel`
-2. Run: `vercel`
-3. Follow the prompts
-
-### Deploy to Netlify
-
-1. Build the project: `npm run build`
-2. Drag and drop the `dist` folder to Netlify
-
-### Deploy to GitHub Pages
-
-1. Install gh-pages: `npm install --save-dev gh-pages`
-2. Add to package.json:
-```json
-"scripts": {
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist"
-}
-```
-3. Run: `npm run deploy`
+© 2024 PT Sano Gratia Farma. All rights reserved.
 
 ---
 
-Made with ❤️ by SGF Indonesia Development Team
+Developed with ❤️ for PT Sano Gratia Farma
