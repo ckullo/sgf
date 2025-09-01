@@ -2,6 +2,13 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { FaCheckCircle, FaIndustry, FaMapMarkerAlt } from 'react-icons/fa'
 import { manufacturingFacility } from '../data/content'
+import image1 from '../../sgf/1.jpg'
+import image2 from '../../sgf/2.jpg'
+import image3 from '../../sgf/3.jpg'
+import image4 from '../../sgf/4.jpg'
+import image5 from '../../sgf/5.jpg'
+
+const facilityImages = [image1, image2, image3, image4, image5]
 
 const Facility = () => {
   return (
@@ -21,7 +28,7 @@ const Facility = () => {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            Manufacturing Excellence
+            Keunggulan Manufaktur
           </motion.span>
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             {manufacturingFacility.title}
@@ -41,7 +48,7 @@ const Facility = () => {
             <div className="bg-white rounded-2xl p-8 shadow-xl">
               <div className="flex items-center mb-6">
                 <FaIndustry className="text-4xl text-blue-600 mr-4" />
-                <h3 className="text-2xl font-bold text-gray-800">Facility Features</h3>
+                <h3 className="text-2xl font-bold text-gray-800">Fitur Fasilitas</h3>
               </div>
               
               <div className="space-y-4">
@@ -64,7 +71,7 @@ const Facility = () => {
                 <div className="flex items-start">
                   <FaMapMarkerAlt className="text-blue-600 mt-1 mr-3 flex-shrink-0" />
                   <div>
-                    <p className="font-semibold text-gray-800">Location</p>
+                    <p className="font-semibold text-gray-800">Lokasi</p>
                     <p className="text-gray-600 text-sm">{manufacturingFacility.location}</p>
                   </div>
                 </div>
@@ -79,23 +86,18 @@ const Facility = () => {
             viewport={{ once: true }}
             className="grid grid-cols-2 gap-4"
           >
-            {[1, 2, 3, 4].map((item) => (
+            {[1, 2, 3, 4, 5].map((item) => (
               <motion.div
                 key={item}
                 whileHover={{ scale: 1.05 }}
-                className="relative h-48 bg-gradient-to-br from-blue-100 to-green-100 rounded-xl overflow-hidden shadow-lg"
+                className="relative h-48 rounded-xl overflow-hidden shadow-lg"
               >
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <FaIndustry className="text-4xl text-blue-600 mb-2" />
-                    <p className="text-sm font-semibold text-gray-700">
-                      {item === 1 && "Production Area"}
-                      {item === 2 && "Quality Control"}
-                      {item === 3 && "Laboratory"}
-                      {item === 4 && "Warehouse"}
-                    </p>
-                  </div>
-                </div>
+                <img 
+                  src={facilityImages[item - 1]} 
+                  alt={`Fasilitas Produksi ${item}`} 
+                  className="w-full h-full object-cover"
+                />
+                {/* Removed text overlay for cleaner image display */}
               </motion.div>
             ))}
           </motion.div>
@@ -110,27 +112,27 @@ const Facility = () => {
         >
           <div className="text-center">
             <h3 className="text-2xl font-bold mb-4">
-              Committed to Quality Excellence
+              Komitmen Terhadap Kualitas Terbaik
             </h3>
             <p className="text-lg mb-8 max-w-2xl mx-auto">
-              Our state-of-the-art facility ensures every product meets the highest standards of quality and safety
+              Fasilitas modern kami memastikan setiap produk memenuhi standar kualitas dan keamanan tertinggi
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               <div>
                 <div className="text-3xl font-bold">CPOB</div>
-                <div className="text-sm opacity-90">Certified</div>
+                <div className="text-sm opacity-90">Tersertifikasi</div>
               </div>
               <div>
                 <div className="text-3xl font-bold">24/7</div>
-                <div className="text-sm opacity-90">Quality Control</div>
+                <div className="text-sm opacity-90">Kontrol Kualitas</div>
               </div>
               <div>
                 <div className="text-3xl font-bold">100%</div>
-                <div className="text-sm opacity-90">Compliance</div>
+                <div className="text-sm opacity-90">Kepatuhan</div>
               </div>
               <div>
                 <div className="text-3xl font-bold">ISO</div>
-                <div className="text-sm opacity-90">Standards</div>
+                <div className="text-sm opacity-90">Standar</div>
               </div>
             </div>
           </div>
