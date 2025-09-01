@@ -5,12 +5,12 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Milestones', href: '#milestones' },
-    { name: 'Products', href: '#products' },
-    { name: 'Facility', href: '#facility' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Beranda', href: '#home' },
+    { name: 'Tentang', href: '#about' },
+    { name: 'Tonggak Sejarah', href: '#milestones' },
+    { name: 'Produk', href: '#products' },
+    { name: 'Fasilitas', href: '#facility' },
+    { name: 'Kontak', href: '#contact' },
   ]
 
   return (

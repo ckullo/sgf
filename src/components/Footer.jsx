@@ -9,26 +9,26 @@ const Footer = () => {
 
   const footerLinks = {
     company: [
-      { name: 'About Us', href: '#about' },
-      { name: 'Our Milestones', href: '#milestones' },
-      { name: 'Manufacturing Facility', href: '#facility' },
-      { name: 'Our Team', href: '#team' }
+      { name: 'Tentang Kami', href: '#about' },
+      { name: 'Tonggak Sejarah', href: '#milestones' },
+      { name: 'Fasilitas Produksi', href: '#facility' },
+      { name: 'Tim Kami', href: '#team' }
     ],
     products: products.map(product => ({
       name: product.name,
       href: '#products'
     })),
     certifications: [
-      { name: 'BPOM Registration', href: 'https://cekbpom.pom.go.id' },
+      { name: 'Registrasi BPOM', href: 'https://cekbpom.pom.go.id' },
       { name: 'Halal MUI', href: 'https://halalmui.org/search-product' },
-      { name: 'CPOB Standards', href: '#' },
-      { name: 'TKDN Certificate', href: '#' }
+      { name: 'Standar CPOB', href: '#' },
+      { name: 'Sertifikat TKDN', href: '#' }
     ],
     legal: [
-      { name: 'Privacy Policy', href: '#' },
-      { name: 'Terms of Service', href: '#' },
-      { name: 'Quality Policy', href: '#' },
-      { name: 'Disclaimer', href: '#' }
+      { name: 'Kebijakan Privasi', href: '#' },
+      { name: 'Syarat dan Ketentuan', href: '#' },
+      { name: 'Kebijakan Mutu', href: '#' },
+      { name: 'Sanggahan', href: '#' }
     ]
   }
 

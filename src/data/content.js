@@ -1,17 +1,17 @@
 // PT Sano Gratia Farma Company Profile Content
-// Official company information based on corporate documentation
+// Informasi resmi perusahaan berdasarkan dokumentasi korporat
 
 export const companyInfo = {
   name: "PT Sano Gratia Farma",
-  tagline: "Your Trusted Partner in Healthcare Solutions",
+  tagline: "Mitra Terpercaya Anda dalam Solusi Kesehatan",
   description: "PT Sano Gratia Farma memulai pendistribusian produk perdana di bulan September 2017 dengan produk Salep Krim Pi Kang Shuang 5gr, sampai saat ini kami telah memasarkan produk TKS dan Solvopain di Indonesia.",
   established: "2017",
   certifications: [
-    "BPOM Certified",
-    "Halal MUI Certified",
-    "BPJPH Halal Certified",
-    "TKDN Certified",
-    "CPOB Certified"
+    "Tersertifikasi BPOM",
+    "Tersertifikasi Halal MUI",
+    "Tersertifikasi Halal BPJPH",
+    "Tersertifikasi TKDN",
+    "Tersertifikasi CPOB"
   ],
   
   contact: {
@@ -29,7 +29,7 @@ export const companyInfo = {
     businessHours: {
       weekdays: "08:00 - 17:00",
       saturday: "08:00 - 12:00",
-      sunday: "Closed"
+      sunday: "Tutup"
     }
   },
   
@@ -70,7 +70,7 @@ export const aboutContent = {
   ],
   
   achievements: [
-    "Sertifikasi Halal MUI Grade A (Excellent)",
+    "Sertifikasi Halal MUI Grade A (Sangat Baik)",
     "Terdaftar BPOM untuk semua produk",
     "37+ karyawan profesional",
     "22+ distributor nasional",
@@ -97,12 +97,12 @@ export const milestones = [
   },
   {
     year: "2019",
-    title: "Launching TKS",
-    description: "Launching produk Tong Kang Shuang"
+    title: "Peluncuran TKS",
+    description: "Peluncuran produk Tong Kang Shuang"
   },
   {
     year: "2020",
-    title: "Launching Solvopain",
+    title: "Peluncuran Solvopain",
     description: "Memperkenalkan produk Solvopain ke pasar"
   },
   {
@@ -117,7 +117,7 @@ export const milestones = [
   },
   {
     year: "2023",
-    title: "Rebranding TKS",
+    title: "Perubahan Merek TKS",
     description: "Perubahan nama produk Tong Kang Shuang menjadi TKS"
   }
 ]

@@ -8,68 +8,68 @@ const Portfolio = () => {
   const projects = [
     {
       id: 1,
-      title: "Government Office Complex",
+      title: "Kompleks Kantor Pemerintah",
       category: "government",
       icon: <FaBuilding />,
-      description: "Supply and installation for new government administrative building",
-      value: "IDR 15 Billion",
+      description: "Pengadaan dan instalasi untuk gedung administrasi pemerintah baru",
+      value: "Rp 15 Miliar",
       year: "2023"
     },
     {
       id: 2,
-      title: "Regional Hospital Equipment",
+      title: "Peralatan Rumah Sakit Daerah",
       category: "healthcare",
       icon: <FaHospital />,
-      description: "Medical equipment procurement for 5 regional hospitals",
-      value: "IDR 25 Billion",
+      description: "Pengadaan alat medis untuk 5 rumah sakit daerah",
+      value: "Rp 25 Miliar",
       year: "2023"
     },
     {
       id: 3,
-      title: "University IT Infrastructure",
+      title: "Infrastruktur TI Universitas",
       category: "education",
       icon: <FaGraduationCap />,
-      description: "Complete IT infrastructure for state university",
-      value: "IDR 8 Billion",
+      description: "Infrastruktur TI lengkap untuk universitas negeri",
+      value: "Rp 8 Miliar",
       year: "2022"
     },
     {
       id: 4,
-      title: "Industrial Zone Development",
+      title: "Pengembangan Kawasan Industri",
       category: "industrial",
       icon: <FaIndustry />,
-      description: "Infrastructure development for industrial zone",
-      value: "IDR 45 Billion",
+      description: "Pengembangan infrastruktur untuk kawasan industri",
+      value: "Rp 45 Miliar",
       year: "2022"
     },
     {
       id: 5,
-      title: "Highway Construction Materials",
+      title: "Material Konstruksi Jalan Tol",
       category: "infrastructure",
       icon: <FaRoad />,
-      description: "Material supply for national highway project",
-      value: "IDR 30 Billion",
+      description: "Pengadaan material untuk proyek jalan tol nasional",
+      value: "Rp 30 Miliar",
       year: "2023"
     },
     {
       id: 6,
-      title: "E-Government Platform",
+      title: "Platform E-Government",
       category: "technology",
       icon: <FaLaptop />,
-      description: "Digital transformation platform for government services",
-      value: "IDR 12 Billion",
+      description: "Platform transformasi digital untuk layanan pemerintah",
+      value: "Rp 12 Miliar",
       year: "2023"
     }
   ]
 
   const categories = [
-    { id: 'all', name: 'All Projects' },
-    { id: 'government', name: 'Government' },
-    { id: 'healthcare', name: 'Healthcare' },
-    { id: 'education', name: 'Education' },
-    { id: 'industrial', name: 'Industrial' },
-    { id: 'infrastructure', name: 'Infrastructure' },
-    { id: 'technology', name: 'Technology' }
+    { id: 'all', name: 'Semua Proyek' },
+    { id: 'government', name: 'Pemerintahan' },
+    { id: 'healthcare', name: 'Kesehatan' },
+    { id: 'education', name: 'Pendidikan' },
+    { id: 'industrial', name: 'Industri' },
+    { id: 'infrastructure', name: 'Infrastruktur' },
+    { id: 'technology', name: 'Teknologi' }
   ]
 
   const filteredProjects = selectedCategory === 'all' 
