@@ -12,7 +12,7 @@ const Footer = () => {
       { name: 'Tentang Kami', href: '#about' },
       { name: 'Tonggak Sejarah', href: '#milestones' },
       { name: 'Fasilitas Produksi', href: '#facility' },
-      { name: 'Tim Kami', href: '#team' }
+      // { name: 'Tim Kami', href: '#team' }
     ],
     products: products.map(product => ({
       name: product.name,
@@ -21,8 +21,8 @@ const Footer = () => {
     certifications: [
       { name: 'Registrasi BPOM', href: 'https://cekbpom.pom.go.id' },
       { name: 'Halal MUI', href: 'https://halalmui.org/search-product' },
-      { name: 'Standar CPOB', href: '#' },
-      { name: 'Sertifikat TKDN', href: '#' }
+      // { name: 'Standar CPOB', href: '#' },
+      // { name: 'Sertifikat TKDN', href: '#' }
     ],
     legal: [
       { name: 'Kebijakan Privasi', href: '#' },
@@ -33,8 +33,8 @@ const Footer = () => {
   }
 
   const socialLinks = [
-    { icon: <FaFacebook />, href: '#', label: 'Facebook' },
-    { icon: <FaTwitter />, href: '#', label: 'Twitter' },
+    // { icon: <FaFacebook />, href: '#', label: 'Facebook' },
+    // { icon: <FaTwitter />, href: '#', label: 'Twitter' },
     { icon: <FaLinkedin />, href: '#', label: 'LinkedIn' },
     { icon: <FaInstagram />, href: '#', label: 'Instagram' },
     { icon: <FaYoutube />, href: '#', label: 'YouTube' }
@@ -117,7 +117,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div>
+          {/* <div>
             <h4 className="text-lg font-semibold mb-4">Legal</h4>
             <ul className="space-y-2">
               {footerLinks.legal.map((link, index) => (
@@ -131,7 +131,7 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
         </div>
 
         {/* Newsletter Subscription */}
