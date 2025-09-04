@@ -130,7 +130,7 @@ export const products = [
     size: "5 gram",
     regNumber: "DKL1842200229A1",
     price: "Rp 16.900",
-    image: "/sgf/PKS.png",
+    image: "/sgf/pks.png",
     description: "Krim untuk kesehatan kulit dengan formula original",
     composition: [
       "Triamcinolone Acetonide Acetate 1 mg",
@@ -162,7 +162,7 @@ export const products = [
     size: "10 gram",
     regNumber: "DTL1842200129A1",
     price: "Rp 17.500",
-    image: "/sgf/TKS.png",
+    image: "/sgf/tks.png",
     description: "Krim anti jamur dengan Ketoconazole untuk berbagai infeksi kulit",
     composition: [
       "Ketoconazole 20mg/g (2%)"
