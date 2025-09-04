@@ -35,7 +35,7 @@ export const companyInfo = {
   
   socialMedia: {
     facebook: "https://facebook.com/sanogratiafarma",
-    instagram: "https://instagram.com/sanogratiafarma",
+    instagram: "https://instagram.com/sanogratiafarmapt",
     linkedin: "https://linkedin.com/company/sanogratiafarma"
   }
 }
@@ -173,7 +173,7 @@ export const products = [
   {
     id: 3,
     name: "Solvopain Krim",
-    category: "Obat Bebas",
+    category: "Obat Kuasi",
     size: "10 gram",
     regNumber: "QD171715591",
     price: "Rp 17.900",

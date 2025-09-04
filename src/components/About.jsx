@@ -31,9 +31,9 @@ const About = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Tentang PT Sano Gratia Farma</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Tentang Kami</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Memimpin solusi pengadaan pemerintah dengan integritas dan keunggulan
+            {/* Memimpin solusi pengadaan pemerintah dengan integritas dan keunggulan */}
           </p>
         </motion.div>
 
@@ -46,17 +46,18 @@ const About = () => {
           >
             <h3 className="text-3xl font-semibold mb-6">Cerita Kami</h3>
             <p className="text-gray-600 mb-4">
-              PT Sano Gratia Farma telah berada di garis depan layanan pengadaan pemerintah 
-              sejak didirikan. Kami mengkhususkan diri dalam menyediakan solusi komprehensif 
-              yang memenuhi persyaratan LKPP dan membantu bisnis menavigasi lanskap kompleks 
-              tender pemerintah.
+              PT Sano Gratia Farma adalah perusahaan farmasi yang berlokasi di Jababeka, Cikarang.
+              Didirikan dengan komitmen untuk menghadirkan produk kesehatan berkualitas tinggi bagi masyarakat Indonesia.
             </p>
             <p className="text-gray-600 mb-6">
-              Komitmen kami terhadap transparansi, kualitas, dan kepuasan pelanggan telah menjadikan kami 
-              mitra terpercaya bagi berbagai instansi pemerintah dan klien sektor swasta 
-              di seluruh Indonesia.
+              Dengan dukungan tim profesional dan fasilitas produksi yang sesuain dengan CPOB (Cara Pembuatan Obat yang Baik),
+              serta teknologi modern, kami berfokus pada pengembangan, produksi, dan distribusi obat-obatan yang aman, efektif dan terjangkau.
             </p>
-            
+            <p className="text-gray-600 mb-6">
+              Kami percaya bahwa kesehatan adalah anugerah yang harus dijaga, dan melalui inovasi serta dedikasi, PT. Sano Gratia Farma
+              hadir untuk memberikan solusi farmasi yang dapat meningkatkan kualitas hidup.
+            </p>
+
             <div className="space-y-3">
               <div className="flex items-center">
                 <FaCheckCircle className="text-primary mr-3" />
@@ -102,17 +103,15 @@ const About = () => {
           className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8"
         >
           <div className="bg-white p-8 rounded-lg shadow-lg">
-            <h3 className="text-2xl font-semibold mb-4">Visi Kami</h3>
+            <h3 className="text-2xl font-semibold mb-4">Visi </h3>
             <p className="text-gray-600">
-              Menjadi penyedia terkemuka solusi pengadaan pemerintah di Indonesia, 
-              menetapkan standar keunggulan, integritas, dan inovasi dalam industri.
+              Menjadi Perusahaan Farmasi terbaik yang mampu memberikan kontribusi positif bagi masyarakat dalam penyediaan produk kesehatan.
             </p>
           </div>
           <div className="bg-white p-8 rounded-lg shadow-lg">
-            <h3 className="text-2xl font-semibold mb-4">Misi Kami</h3>
+            <h3 className="text-2xl font-semibold mb-4">Misi </h3>
             <p className="text-gray-600">
-              Memberikan layanan pengadaan luar biasa yang memberdayakan bisnis untuk berhasil 
-              dalam tender pemerintah sambil mempertahankan standar kepatuhan dan etika tertinggi.
+              Menghasilkan produk kesehatan yang efektif dan terjangkau agar masyarakat mendapat kemudahan untuk hidup lebih sehat dan berkualitas.
             </p>
           </div>
         </motion.div>

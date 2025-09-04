@@ -38,7 +38,7 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: <FaMapMarkerAlt />,
-      title: "Head Office",
+      title: "Kantor Pusat",
       content: [
         companyInfo.contact.address.street,
         companyInfo.contact.address.area,
@@ -48,7 +48,7 @@ const Contact = () => {
     },
     {
       icon: <FaPhone />,
-      title: "Phone",
+      title: "Telepon",
       content: [companyInfo.contact.phone],
     },
     {
@@ -63,11 +63,11 @@ const Contact = () => {
     },
     {
       icon: <FaClock />,
-      title: "Business Hours",
+      title: "Jam Kerja",
       content: [
-        `Weekdays: ${companyInfo.contact.businessHours.weekdays}`,
-        `Saturday: ${companyInfo.contact.businessHours.saturday}`,
-        `Sunday: ${companyInfo.contact.businessHours.sunday}`,
+        `Hari Kerja: ${companyInfo.contact.businessHours.weekdays}`,
+        `Sabtu: ${companyInfo.contact.businessHours.saturday}`,
+        `Minggu: ${companyInfo.contact.businessHours.sunday}`,
       ],
     },
   ];

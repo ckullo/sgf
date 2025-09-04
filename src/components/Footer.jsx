@@ -70,7 +70,7 @@ const Footer = () => {
 
           {/* Footer Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Company</h4>
+            <h4 className="text-lg font-semibold mb-4">Perusahaan</h4>
             <ul className="space-y-2">
               {footerLinks.company.map((link, index) => (
                 <li key={index}>
@@ -86,7 +86,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Our Products</h4>
+            <h4 className="text-lg font-semibold mb-4">Produk Kami</h4>
             <ul className="space-y-2">
               {footerLinks.products.map((link, index) => (
                 <li key={index}>
@@ -102,7 +102,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Certifications</h4>
+            <h4 className="text-lg font-semibold mb-4">Sertifikasi</h4>
             <ul className="space-y-2">
               {footerLinks.certifications.map((link, index) => (
                 <li key={index}>
@@ -135,7 +135,7 @@ const Footer = () => {
         </div>
 
         {/* Newsletter Subscription */}
-        <div className="mt-12 pt-8 border-t border-gray-800">
+        {/* <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
               <h4 className="text-lg font-semibold mb-2">Subscribe to Our Newsletter</h4>
@@ -152,7 +152,7 @@ const Footer = () => {
               </button>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Bottom Bar */}
         <div className="mt-8 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">

@@ -9,8 +9,9 @@ const Products = () => {
   const getCategoryIcon = (category) => {
     switch(category) {
       case 'Obat Keras': return <FaPills className="text-red-500" />
-      case 'Obat Bebas Terbatas': return <FaFlask className="text-yellow-500" />
+      case 'Obat Bebas Terbatas': return <FaPills className="text-blue-500" />
       case 'Obat Bebas': return <FaLeaf className="text-green-500" />
+      case 'Obat Kuasi': return <FaPills className="text-green-500" />
       default: return <FaPills className="text-gray-500" />
     }
   }
@@ -18,8 +19,9 @@ const Products = () => {
   const getCategoryColor = (category) => {
     switch(category) {
       case 'Obat Keras': return 'bg-red-100 text-red-700 border-red-300'
-      case 'Obat Bebas Terbatas': return 'bg-yellow-100 text-yellow-700 border-yellow-300'
+      case 'Obat Bebas Terbatas': return 'bg-blue-100 text-blue-700 border-blue-300'
       case 'Obat Bebas': return 'bg-green-100 text-green-700 border-green-300'
+      case 'Obat Kuasi': return 'bg-green-100 text-green-700 border-green-300'
       default: return 'bg-gray-100 text-gray-700 border-gray-300'
     }
   }
@@ -41,10 +43,10 @@ const Products = () => {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            Our Products
+            Produk Kami
           </motion.span>
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Quality Healthcare Solutions
+            Solusi Kesehatan Berkualitas
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Produk-produk berkualitas tinggi yang telah terdaftar BPOM dan bersertifikat Halal MUI
@@ -79,7 +81,7 @@ const Products = () => {
                 
                 <div className="space-y-2 mb-4">
                   <div className="flex items-center text-sm">
-                    <span className="text-gray-500 w-20">Size:</span>
+                    <span className="text-gray-500 w-20">Ukuran:</span>
                     <span className="font-semibold">{product.size}</span>
                   </div>
                   <div className="flex items-center text-sm">
@@ -87,7 +89,7 @@ const Products = () => {
                     <span className="font-semibold text-green-600">{product.regNumber}</span>
                   </div>
                   <div className="flex items-center text-sm">
-                    <span className="text-gray-500 w-20">Price:</span>
+                    <span className="text-gray-500 w-20">Harga (HET):</span>
                     <span className="font-bold text-lg text-blue-600">{product.price}</span>
                   </div>
                 </div>
@@ -139,29 +141,29 @@ const Products = () => {
                 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <h4 className="font-semibold text-lg text-gray-800 mb-3">Product Information</h4>
+                    <h4 className="font-semibold text-lg text-gray-800 mb-3">Informasi Produk</h4>
                     <div className="space-y-2 mb-4">
                       <div className="flex">
-                        <span className="text-gray-500 w-32">Registration:</span>
+                        <span className="text-gray-500 w-32">Reg. No:</span>
                         <span className="font-semibold">{selectedProduct.regNumber}</span>
                       </div>
                       <div className="flex">
-                        <span className="text-gray-500 w-32">Size:</span>
+                        <span className="text-gray-500 w-32">Ukuran:</span>
                         <span className="font-semibold">{selectedProduct.size}</span>
                       </div>
                       <div className="flex">
-                        <span className="text-gray-500 w-32">Packaging:</span>
+                        <span className="text-gray-500 w-32">Kemasan:</span>
                         <span className="font-semibold">{selectedProduct.packaging}</span>
                       </div>
                       <div className="flex">
-                        <span className="text-gray-500 w-32">Price (HET):</span>
+                        <span className="text-gray-500 w-32">Harga (HET):</span>
                         <span className="font-bold text-xl text-blue-600">{selectedProduct.price}</span>
                       </div>
                     </div>
                     
                     {selectedProduct.composition && (
                       <>
-                        <h4 className="font-semibold text-lg text-gray-800 mb-3">Composition</h4>
+                        <h4 className="font-semibold text-lg text-gray-800 mb-3">Komposisi</h4>
                         <ul className="space-y-2 mb-4">
                           {selectedProduct.composition.map((comp, idx) => (
                             <li key={idx} className="flex items-start">
@@ -177,7 +179,7 @@ const Products = () => {
                   <div>
                     {selectedProduct.indications && (
                       <>
-                        <h4 className="font-semibold text-lg text-gray-800 mb-3">Indications</h4>
+                        <h4 className="font-semibold text-lg text-gray-800 mb-3">Indikasi</h4>
                         <ul className="space-y-2 mb-4">
                           {selectedProduct.indications.map((indication, idx) => (
                             <li key={idx} className="flex items-start">
@@ -191,7 +193,7 @@ const Products = () => {
                     
                     {selectedProduct.features && (
                       <>
-                        <h4 className="font-semibold text-lg text-gray-800 mb-3">Key Features</h4>
+                        <h4 className="font-semibold text-lg text-gray-800 mb-3">Keunggulan</h4>
                         <ul className="space-y-2 mb-4">
                           {selectedProduct.features.map((feature, idx) => (
                             <li key={idx} className="flex items-start">
@@ -221,8 +223,8 @@ const Products = () => {
                 
                 <div className="mt-6 p-4 bg-green-50 rounded-lg">
                   <p className="text-sm text-green-700">
-                    <strong>Note:</strong> All our products are registered with BPOM and certified Halal by MUI. 
-                    Verify at <a href="https://cekbpom.pom.go.id" target="_blank" rel="noopener noreferrer" className="underline">cekbpom.pom.go.id</a>
+                    <strong>Catatan:</strong> Semua produk kami terdaftar di BPOM dan bersertifikat Halal. 
+                    Verifikasi BPOM <a href="https://cekbpom.pom.go.id" target="_blank" rel="noopener noreferrer" className="underline">cekbpom.pom.go.id</a>
                   </p>
                 </div>
               </motion.div>
