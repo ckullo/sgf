@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FaCheckCircle, FaInfoCircle, FaPills, FaFlask, FaLeaf } from 'react-icons/fa'
+import { FaCheckCircle, FaInfoCircle, FaPills, FaFlask, FaLeaf, FaExclamationCircle } from 'react-icons/fa'
 import { products } from '../data/content'
+import { FaTriangleExclamation } from 'react-icons/fa6'
 
 const Products = () => {
   const [selectedProduct, setSelectedProduct] = useState(null)
@@ -64,8 +65,12 @@ const Products = () => {
               className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 hover:shadow-2xl transition-shadow cursor-pointer"
               onClick={() => setSelectedProduct(product)}
             >
-              <div className="relative h-48 bg-gradient-to-br from-green-50 to-blue-50 flex items-center justify-center">
-                <div className="text-6xl opacity-20">💊</div>
+              <div className="relative h-48 bg-gray-50 flex items-center justify-center p-4">
+                <img 
+                  src={product.image} 
+                  alt={product.name}
+                  className="max-h-full w-auto object-contain"
+                />
                 <div className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-semibold border ${getCategoryColor(product.category)}`}>
                   {product.category}
                 </div>
@@ -139,48 +144,56 @@ const Products = () => {
                   </button>
                 </div>
                 
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <h4 className="font-semibold text-lg text-gray-800 mb-3">Informasi Produk</h4>
-                    <div className="space-y-2 mb-4">
-                      <div className="flex">
-                        <span className="text-gray-500 w-32">Reg. No:</span>
-                        <span className="font-semibold">{selectedProduct.regNumber}</span>
-                      </div>
-                      <div className="flex">
-                        <span className="text-gray-500 w-32">Ukuran:</span>
-                        <span className="font-semibold">{selectedProduct.size}</span>
-                      </div>
-                      <div className="flex">
-                        <span className="text-gray-500 w-32">Kemasan:</span>
-                        <span className="font-semibold">{selectedProduct.packaging}</span>
-                      </div>
-                      <div className="flex">
-                        <span className="text-gray-500 w-32">Harga (HET):</span>
-                        <span className="font-bold text-xl text-blue-600">{selectedProduct.price}</span>
+                <div className="grid md:grid-cols-2 gap-8 items-start">
+                  <div className="flex items-center justify-center bg-gray-100 rounded-lg p-4 sticky top-0">
+                    <img 
+                      src={selectedProduct.image} 
+                      alt={selectedProduct.name} 
+                      className="max-h-80 w-auto object-contain"
+                    />
+                  </div>
+
+                  <div className="space-y-6">
+                    <div>
+                      <h4 className="font-semibold text-lg text-gray-800 mb-3">Informasi Produk</h4>
+                      <div className="space-y-2">
+                        <div className="flex">
+                          <span className="text-gray-500 w-32">Reg. No:</span>
+                          <span className="font-semibold">{selectedProduct.regNumber}</span>
+                        </div>
+                        <div className="flex">
+                          <span className="text-gray-500 w-32">Ukuran:</span>
+                          <span className="font-semibold">{selectedProduct.size}</span>
+                        </div>
+                        <div className="flex">
+                          <span className="text-gray-500 w-32">Kemasan:</span>
+                          <span className="font-semibold">{selectedProduct.packaging}</span>
+                        </div>
+                        <div className="flex">
+                          <span className="text-gray-500 w-32">Harga (HET):</span>
+                          <span className="font-bold text-xl text-blue-600">{selectedProduct.price}</span>
+                        </div>
                       </div>
                     </div>
-                    
+
                     {selectedProduct.composition && (
-                      <>
+                      <div className="pt-4 border-t">
                         <h4 className="font-semibold text-lg text-gray-800 mb-3">Komposisi</h4>
-                        <ul className="space-y-2 mb-4">
+                        <ul className="space-y-2">
                           {selectedProduct.composition.map((comp, idx) => (
                             <li key={idx} className="flex items-start">
-                              <FaCheckCircle className="text-green-500 mt-1 mr-2 flex-shrink-0" />
+                              <FaFlask className="text-blue-500 mt-1 mr-3 flex-shrink-0" />
                               <span className="text-gray-600">{comp}</span>
                             </li>
                           ))}
                         </ul>
-                      </>
+                      </div>
                     )}
-                  </div>
-                  
-                  <div>
+
                     {selectedProduct.indications && (
-                      <>
+                      <div className="pt-4 border-t">
                         <h4 className="font-semibold text-lg text-gray-800 mb-3">Indikasi</h4>
-                        <ul className="space-y-2 mb-4">
+                        <ul className="space-y-2">
                           {selectedProduct.indications.map((indication, idx) => (
                             <li key={idx} className="flex items-start">
                               <FaCheckCircle className="text-blue-500 mt-1 mr-2 flex-shrink-0" />
@@ -188,13 +201,27 @@ const Products = () => {
                             </li>
                           ))}
                         </ul>
-                      </>
+                      </div>
+                    )}
+
+                    {selectedProduct.contra_indications && (
+                      <div className="pt-4 border-t">
+                        <h4 className="font-semibold text-lg text-gray-800 mb-3">Kontraindikasi</h4>
+                        <ul className="space-y-2">
+                          {selectedProduct.contra_indications.map((contra, idx) => (
+                            <li key={idx} className="flex items-start">
+                              <FaExclamationCircle className="text-red-500 mt-1 mr-2 flex-shrink-0" />
+                              <span className="text-gray-600">{contra}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     )}
                     
                     {selectedProduct.features && (
-                      <>
+                      <div className="pt-4 border-t">
                         <h4 className="font-semibold text-lg text-gray-800 mb-3">Keunggulan</h4>
-                        <ul className="space-y-2 mb-4">
+                        <ul className="space-y-2">
                           {selectedProduct.features.map((feature, idx) => (
                             <li key={idx} className="flex items-start">
                               <FaCheckCircle className="text-green-500 mt-1 mr-2 flex-shrink-0" />
@@ -202,21 +229,28 @@ const Products = () => {
                             </li>
                           ))}
                         </ul>
-                      </>
+                      </div>
                     )}
                     
                     {selectedProduct.pharmacology && (
-                      <>
-                        <h4 className="font-semibold text-lg text-gray-800 mb-3">Pharmacology</h4>
-                        <p className="text-gray-600 text-sm">{selectedProduct.pharmacology}</p>
-                      </>
+                      <div className="pt-4 border-t">
+                        <h4 className="font-semibold text-lg text-gray-800 mb-3">Farmakologi</h4>
+                        <span className="text-gray-600">{selectedProduct.pharmacology}</span>
+                      </div>
                     )}
                     
                     {selectedProduct.sideEffects && (
-                      <>
-                        <h4 className="font-semibold text-lg text-gray-800 mb-3 mt-4">Side Effects</h4>
-                        <p className="text-gray-600 text-sm">{selectedProduct.sideEffects}</p>
-                      </>
+                      <div className="pt-4 border-t">
+                        <h4 className="font-semibold text-lg text-gray-800 mb-3">Efek Samping</h4>
+                        <ul className="space-y-2">
+                          {selectedProduct.sideEffects.map((sideEffects, idx) => (
+                            <li key={idx} className="flex items-start">
+                              <FaExclamationCircle className="text-red-500 mt-1 mr-2 flex-shrink-0" />
+                              <span className="text-gray-600">{sideEffects}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     )}
                   </div>
                 </div>

@@ -130,7 +130,7 @@ export const products = [
     size: "5 gram",
     regNumber: "DKL1842200229A1",
     price: "Rp 16.900",
-    image: "/images/pikang.jpg",
+    image: "/sgf/PKS.png",
     description: "Krim untuk kesehatan kulit dengan formula original",
     composition: [
       "Triamcinolone Acetonide Acetate 1 mg",
@@ -139,12 +139,21 @@ export const products = [
     ],
     packaging: "Dus, Tube @ 5 gram",
     boxContent: "1 karton (40 Pak @30 tube, 1200 tube)",
-    features: [
-      "Produk original PT Sano Gratia Farma",
-      "Terdaftar BPOM sejak 30 Mei 2019",
-      "Halal MUI Grade A (Sangat Baik/Excellent)",
-      "Ketetapan Halal MUI Nomor LPPOM-00140130691021"
-    ]
+    // features: [
+    //   "Produk original PT Sano Gratia Farma",
+    //   "Terdaftar BPOM sejak 30 Mei 2019",
+    //   "Halal MUI Grade A (Sangat Baik/Excellent)",
+    //   "Ketetapan Halal MUI Nomor LPPOM-00140130691021"
+    // ],
+    indications: [
+      "Meringankan inflamasi dari dermatosis yang responsif terhadap kortikosteroid yang disertai infeksi jamur dan bakteri.",
+    ],
+    contra_indications: ["Hipersensitivitas terhadap Triamcinolon Acetonide Asetate, Miconazole Nitrate dan Neomycin Sulfate."],
+    sideEffects: [
+      "Terbakar, gatal, inflamasi, iritasi dan eritema.", 
+      "Pemakaian jangka panjang dapat menyebabkan penipisan kulit (atrofi) lokal, pigmentasi, dan berbulu."
+    ],
+    pharmacology: "Produk ini mengandung Miconazole Nitrate sebagai anti jamur dengan spektrum luas,Triamcinolon Acetonide Acetate merupakan golongan glukokortikoid sebagai anti inflamasi, anti pruritis dan anti alergi,serta Neomycin Sulfate yang mempunyai efek anti bakteri pada bakteri gram positif dan bakteri gram negatif."
   },
   {
     id: 2,
@@ -153,7 +162,7 @@ export const products = [
     size: "10 gram",
     regNumber: "DTL1842200129A1",
     price: "Rp 17.500",
-    image: "/images/tks.jpg",
+    image: "/sgf/TKS.png",
     description: "Krim anti jamur dengan Ketoconazole untuk berbagai infeksi kulit",
     composition: [
       "Ketoconazole 20mg/g (2%)"
@@ -161,14 +170,14 @@ export const products = [
     packaging: "Dus, Tube @ 10 gram",
     boxContent: "1 karton (40 Pak @20 tube, 800 tube)",
     indications: [
-      "Tinea corporis",
-      "Tinea cruris",
-      "Tinea manus",
-      "Tinea pedis",
-      "Kandidosis kutis",
-      "Tinea (pityriasis) versicolor"
+      "Diindikasikan untuk penggunaan topical pada pengobatan infeksi dermatofit pada kulit seperti Tinea karporis, Tinea kruris, Tinea manus, dan Tinea pedis yang disebabkan oleh Trycophyton rubrum, Trycophyton mentagrophytes, Microsporum canis, dan Epidermophyton flocosum, juga pengobatan pada kandidosis kutis dan Tinea (pityriasis) versicolor."
     ],
-    pharmacology: "Ketoconazole adalah derivat imidazole-dioxolan sintetis dengan aktivitas antimikotik poten terhadap dermatofit dan ragi. Bekerja dengan menghambat cytochrome P450 jamur, mengganggu sintesa ergosterol yang merupakan komponen penting membran sel jamur."
+    contra_indications: ["Hipersensitivitas terhadap Ketoconazole atau salah satu komponen obat ini."],
+    sideEffects: [
+      "Sedikit rasa iritasi dan rasa panas.", 
+      "Alergi kulit lokal dermatitis kontak karena ketoconazole atau salah satu komponen obat seperti natrium sulfit atau propilen glikol (jarang)."
+    ],
+    pharmacology: "Ketoconazole adalah suatu derivate imidazole-dioxolan sintetis yang memiliki antimikotik yang poten terhadap dermatovit, ragi. Misalnya Tricophyton SP, Epidermophyton floccosum, Pityrosporum SP, Candida SP. Ketoconazole bekerja dengan menghambat “cytochrome P 450” jamur, dengan mengganggu sintesa ergosterol yang merupakan komponen penting dari membran sel jamur."
   },
   {
     id: 3,
@@ -177,7 +186,7 @@ export const products = [
     size: "10 gram",
     regNumber: "QD171715591",
     price: "Rp 17.900",
-    image: "/images/solvopain.jpg",
+    image: "/sgf/Solvopain.png",
     description: "Krim pereda nyeri untuk nyeri sendi dan otot",
     composition: [
       "Methyl Salicylate 102 mg",
@@ -187,13 +196,14 @@ export const products = [
     packaging: "Dus, Tube @ 10 gram",
     boxContent: "1 karton (20 Pak @20 tube, 400 tube)",
     indications: [
-      "Nyeri sendi",
-      "Keseleo",
-      "Reumatik",
-      "Pegal linu",
-      "Nyeri otot punggung, leher, dan kaki"
+      "Meringankan nyeri sendi, keseleo, reumatik, pegal, linu pada otot punggung, leher, dan kaki."
     ],
-    sideEffects: "Urtikaria, reaksi hipersensitif, rasa panas dan kemerahan"
+    contra_indications: ["Alergi terhadap salah satu komponen obat."],
+    sideEffects: [
+      "Terbakar, gatal, inflamasi, iritasi dan eritema.", 
+      "Pemakaian jangka panjang dapat menyebabkan penipisan kulit (atrofi) lokal, pigmentasi, dan berbulu."
+    ],
+    sideEffects: ["Urtikaria, reaksi hipersensitif, rasa panas dan kemerahan."]
   }
 ]
 

@@ -14,10 +14,10 @@ const Milestones = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Our Journey
+            Perjalanan Kami
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            From humble beginnings to becoming a trusted name in pharmaceutical industry
+            Dari awal yang sederhana hingga menjadi nama terpercaya di industri farmasi
           </p>
         </motion.div>
 
@@ -82,7 +82,7 @@ const Milestones = () => {
         >
           <div className="inline-flex items-center bg-green-100 px-6 py-3 rounded-full">
             <span className="text-green-700 font-semibold">
-              And the journey continues...
+              Dan perjalanan ini terus berlanjut...
             </span>
           </div>
         </motion.div>

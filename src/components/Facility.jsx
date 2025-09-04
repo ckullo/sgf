@@ -1,6 +1,6 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import { FaCheckCircle, FaIndustry, FaMapMarkerAlt } from 'react-icons/fa'
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion'
+import { FaCheckCircle, FaIndustry, FaMapMarkerAlt, FaChevronLeft, FaChevronRight, FaTimes } from 'react-icons/fa'
 import { manufacturingFacility } from '../data/content'
 import image1 from '../../sgf/1.jpg'
 import image2 from '../../sgf/2.jpg'
@@ -9,8 +9,70 @@ import image4 from '../../sgf/4.jpg'
 import image5 from '../../sgf/5.jpg'
 
 const facilityImages = [image1, image2, image3, image4, image5]
+const AUTOPLAY_INTERVAL = 5000 // 5 seconds
 
 const Facility = () => {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [direction, setDirection] = useState(0)
+  const [isHovered, setIsHovered] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const slideVariants = {
+    enter: (direction) => ({
+      x: direction > 0 ? '100%' : '-100%',
+      opacity: 0,
+    }),
+    center: {
+      zIndex: 1,
+      x: 0,
+      opacity: 1,
+    },
+    exit: (direction) => ({
+      zIndex: 0,
+      x: direction < 0 ? '100%' : '-100%',
+      opacity: 0,
+    }),
+  }
+
+  const setSlide = (newIndex, newDirection) => {
+    if (newIndex < 0) {
+      newIndex = facilityImages.length - 1
+    } else if (newIndex >= facilityImages.length) {
+      newIndex = 0
+    }
+    setDirection(newDirection)
+    setCurrentIndex(newIndex)
+  }
+
+  useEffect(() => {
+    // Pause autoplay when the user is hovering over the slider
+    if (isHovered || isModalOpen) return
+
+    const timer = setTimeout(() => {
+      setSlide(currentIndex + 1, 1)
+    }, AUTOPLAY_INTERVAL)
+
+    return () => clearTimeout(timer)
+  }, [currentIndex, isHovered, isModalOpen])
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'ArrowLeft') {
+        setSlide(currentIndex - 1, -1);
+      } else if (e.key === 'ArrowRight') {
+        setSlide(currentIndex + 1, 1);
+      } else if (e.key === 'Escape') {
+        setIsModalOpen(false);
+      }
+    };
+
+    if (isModalOpen) {
+      window.addEventListener('keydown', handleKeyDown);
+    }
+
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isModalOpen, currentIndex]);
+
   return (
     <section id="facility" className="py-20 bg-gradient-to-b from-gray-50 to-white">
       <div className="container-custom">
@@ -84,24 +146,114 @@ const Facility = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="grid grid-cols-2 gap-4"
+            className="relative h-96 w-full overflow-hidden rounded-2xl shadow-xl"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
           >
-            {[1, 2, 3, 4, 5].map((item) => (
-              <motion.div
-                key={item}
-                whileHover={{ scale: 1.05 }}
-                className="relative h-48 rounded-xl overflow-hidden shadow-lg"
-              >
-                <img 
-                  src={facilityImages[item - 1]} 
-                  alt={`Fasilitas Produksi ${item}`} 
-                  className="w-full h-full object-cover"
+            <AnimatePresence initial={false} custom={direction}>
+              <motion.img
+                key={currentIndex}
+                src={facilityImages[currentIndex]}
+                alt={`Fasilitas Produksi ${currentIndex + 1}`}
+                custom={direction}
+                variants={slideVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{
+                  x: { type: "spring", stiffness: 300, damping: 30 },
+                  opacity: { duration: 0.2 }
+                }}
+                className="absolute w-full h-full object-cover cursor-pointer"
+                onClick={() => setIsModalOpen(true)}
+              />
+            </AnimatePresence>
+
+            <button
+              onClick={() => setSlide(currentIndex - 1, -1)}
+              className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/50 p-2 rounded-full shadow-md hover:bg-white transition z-10"
+              aria-label="Previous slide"
+            >
+              <FaChevronLeft className="text-blue-600" />
+            </button>
+            <button
+              onClick={() => setSlide(currentIndex + 1, 1)}
+              className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/50 p-2 rounded-full shadow-md hover:bg-white transition z-10"
+              aria-label="Next slide"
+            >
+              <FaChevronRight className="text-blue-600" />
+            </button>
+
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
+              {facilityImages.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setSlide(index, index > currentIndex ? 1 : -1)}
+                  className={`w-3 h-3 rounded-full transition-colors ${
+                    currentIndex === index ? 'bg-blue-600' : 'bg-white/70 hover:bg-white'
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
                 />
-                {/* Removed text overlay for cleaner image display */}
-              </motion.div>
-            ))}
+              ))}
+            </div>
           </motion.div>
         </div>
+
+        <AnimatePresence>
+          {isModalOpen && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
+              onClick={() => setIsModalOpen(false)}
+            >
+              {/* Modal content container to stop backdrop click propagation */}
+              <motion.div
+                className="relative w-full h-full flex items-center justify-center"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {/* Image container with AnimatePresence for transitions */}
+                <motion.div
+                  initial={{ scale: 0.9, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.9, opacity: 0 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                  className="relative w-full h-full max-w-5xl max-h-[90vh] overflow-hidden rounded-lg shadow-2xl"
+                >
+                  <AnimatePresence initial={false} custom={direction}>
+                    <motion.img
+                      key={currentIndex}
+                      src={facilityImages[currentIndex]}
+                      alt={`Fasilitas Produksi ${currentIndex + 1} zoomed in`}
+                      custom={direction}
+                      variants={slideVariants}
+                      initial="enter"
+                      animate="center"
+                      exit="exit"
+                      transition={{
+                        x: { type: "spring", stiffness: 300, damping: 30 },
+                        opacity: { duration: 0.2 }
+                      }}
+                      className="absolute inset-0 w-full h-full object-contain"
+                    />
+                  </AnimatePresence>
+                </motion.div>
+              </motion.div>
+
+              {/* Navigation and Close buttons */}
+              <button onClick={(e) => { e.stopPropagation(); setSlide(currentIndex - 1, -1); }} className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-white text-4xl hover:text-gray-300 transition-colors z-50 p-2 bg-black/20 rounded-full" aria-label="Previous image">
+                <FaChevronLeft />
+              </button>
+              <button onClick={(e) => { e.stopPropagation(); setSlide(currentIndex + 1, 1); }} className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-white text-4xl hover:text-gray-300 transition-colors z-50 p-2 bg-black/20 rounded-full" aria-label="Next image">
+                <FaChevronRight />
+              </button>
+              <button onClick={() => setIsModalOpen(false)} className="absolute top-5 right-5 text-white text-4xl hover:text-gray-300 transition-colors z-50" aria-label="Close image modal">
+                <FaTimes />
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
