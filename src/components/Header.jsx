@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
+import logo from '../../sgf/logo.jpg'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -18,8 +19,10 @@ const Header = () => {
       <nav className="container-custom">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
-            <span className="text-2xl font-bold text-green-600">PT Sano</span>
-            <span className="text-xl ml-2 text-blue-600">Gratia Farma</span>
+            <img src={logo} alt="PT Sano Gratia Farma Logo" className="h-12 mr-3" />
+            <div>
+              <span className="text-2xl font-bold text-green-600">PT Sano Gratia Farma</span>
+            </div>
           </div>
 
           {/* Desktop Navigation */}
