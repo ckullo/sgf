@@ -34,9 +34,9 @@ export const companyInfo = {
   },
   
   socialMedia: {
-    facebook: "https://facebook.com/sanogratiafarma",
+    facebook: "https://facebook.com/",
     instagram: "https://instagram.com/sanogratiafarmapt",
-    linkedin: "https://linkedin.com/company/sanogratiafarma"
+    linkedin: "https://linkedin.com/"
   }
 }
 
@@ -209,7 +209,7 @@ export const products = [
 
 export const certifications = [
   {
-    name: "BPOM Registration",
+    name: "Terdaftar BPOM",
     description: "Semua produk terdaftar resmi di BPOM",
     verifyUrl: "https://cekbpom.pom.go.id",
     icon: "🏥"

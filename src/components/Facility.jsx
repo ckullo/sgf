@@ -7,6 +7,7 @@ import image2 from '../../sgf/2.jpg'
 import image3 from '../../sgf/3.jpg'
 import image4 from '../../sgf/4.jpg'
 import image5 from '../../sgf/5.jpg'
+import factoryImage from '../../sgf/pabrik.jpg'
 
 const facilityImages = [image1, image2, image3, image4, image5]
 const AUTOPLAY_INTERVAL = 5000 // 5 seconds
@@ -100,7 +101,21 @@ const Facility = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="mt-16"
+        >
+          <img
+            src={factoryImage}
+            alt="Gedung Pabrik PT Sano Gratia Farma"
+            className="w-full h-auto rounded-2xl shadow-xl object-cover"
+          />
+        </motion.div>
+
+        <div className="grid lg:grid-cols-2 gap-12 items-center mt-16">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -199,6 +214,7 @@ const Facility = () => {
           </motion.div>
         </div>
 
+
         <AnimatePresence>
           {isModalOpen && (
             <motion.div
@@ -258,7 +274,7 @@ const Facility = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
           className="mt-16 bg-gradient-to-r from-blue-600 to-green-600 rounded-2xl p-8 text-white"
         >

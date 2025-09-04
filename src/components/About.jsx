@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { FaCheckCircle, FaUsers, FaAward, FaHandshake } from 'react-icons/fa'
+import distributionImage from '../../sgf/distribusi.png'
 
 const About = () => {
   const features = [
@@ -115,7 +116,24 @@ const About = () => {
             </p>
           </div>
         </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="mt-20 text-center"
+        >
+          <h3 className="text-3xl font-bold text-gray-900 mb-8">Jaringan Distribusi Kami</h3>
+          <img
+            src={distributionImage}
+            alt="Jaringan Distribusi PT Sano Gratia Farma"
+            className="w-full h-auto rounded-2xl shadow-xl object-contain"
+          />
+        </motion.div>
+
       </div>
+
     </section>
   )
 }

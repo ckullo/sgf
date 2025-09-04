@@ -5,9 +5,9 @@ import { companyInfo, certifications } from '../data/content'
 
 const Hero = () => {
   const highlights = [
-    { icon: <FaShieldAlt />, text: "BPOM & Halal MUI Certified" },
-    { icon: <FaAward />, text: "CPOB Standards" },
-    { icon: <FaFlask />, text: "Quality Healthcare Products" }
+    { icon: <FaShieldAlt />, text: "Tersertifikasi BPOM & Halal MUI" },
+    { icon: <FaAward />, text: "Berstandar CPOB" },
+    { icon: <FaFlask />, text: "Produk Kesehatan Berkualitas" }
   ]
 
   return (
@@ -25,7 +25,7 @@ const Hero = () => {
               transition={{ duration: 0.6 }}
               className="inline-block px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-semibold mb-6"
             >
-              🏥 Trusted Since 2017
+              🏥 Dipercaya sejak 2017
             </motion.div>
             
             <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
@@ -64,7 +64,7 @@ const Hero = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Explore Our Products
+                Produk Kami
                 <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </motion.a>
               <motion.a 
@@ -73,7 +73,7 @@ const Hero = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Contact Us
+                Hubungi Kami
               </motion.a>
             </div>
           </motion.div>
@@ -98,7 +98,7 @@ const Hero = () => {
               />
               
               <div className="bg-white rounded-2xl p-8 shadow-2xl border border-gray-100">
-                <h3 className="text-2xl font-bold mb-6 text-gray-800">Our Certifications</h3>
+                <h3 className="text-2xl font-bold mb-6 text-gray-800">Sertifikasi Kami</h3>
                 <div className="space-y-4">
                   {certifications.map((cert, index) => (
                     <motion.div 
@@ -122,7 +122,7 @@ const Hero = () => {
                             rel="noopener noreferrer"
                             className="text-xs text-blue-600 hover:underline mt-1 inline-block"
                           >
-                            Verify →
+                            Verifikasi →
                           </a>
                         )}
                       </div>
@@ -134,15 +134,15 @@ const Hero = () => {
                   <div className="grid grid-cols-3 gap-4 text-center">
                     <div>
                       <div className="text-2xl font-bold text-green-600">37+</div>
-                      <div className="text-xs text-gray-600">Employees</div>
+                      <div className="text-xs text-gray-600">Karyawan</div>
                     </div>
                     <div>
                       <div className="text-2xl font-bold text-green-600">22+</div>
-                      <div className="text-xs text-gray-600">Distributors</div>
+                      <div className="text-xs text-gray-600">Distributor</div>
                     </div>
                     <div>
                       <div className="text-2xl font-bold text-green-600">3</div>
-                      <div className="text-xs text-gray-600">Products</div>
+                      <div className="text-xs text-gray-600">Produk</div>
                     </div>
                   </div>
                 </div>
