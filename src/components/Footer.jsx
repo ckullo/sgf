@@ -1,44 +1,51 @@
-import React from 'react'
-import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaYoutube, FaArrowUp } from 'react-icons/fa'
-import { companyInfo, products, certifications } from '../data/content'
+import React from "react";
+import {
+  FaFacebook,
+  FaTwitter,
+  FaLinkedin,
+  FaInstagram,
+  FaYoutube,
+  FaArrowUp,
+} from "react-icons/fa";
+import { companyInfo, products, certifications } from "../data/content";
 
 const Footer = () => {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const footerLinks = {
     company: [
-      { name: 'Tentang Kami', href: '#about' },
-      { name: 'Tonggak Sejarah', href: '#milestones' },
-      { name: 'Fasilitas Produksi', href: '#facility' },
+      { name: "Tentang Kami", href: "#about" },
+      { name: "Tonggak Sejarah", href: "#milestones" },
+      { name: "Fasilitas Produksi", href: "#facility" },
       // { name: 'Tim Kami', href: '#team' }
     ],
-    products: products.map(product => ({
+    products: products.map((product) => ({
       name: product.name,
-      href: '#products'
+      href: "#products",
     })),
     certifications: [
-      { name: 'Registrasi BPOM', href: 'https://cekbpom.pom.go.id' },
-      { name: 'Halal MUI', href: 'https://halalmui.org/search-product' },
+      { name: "Registrasi BPOM", href: "https://cekbpom.pom.go.id" },
+      { name: "Halal MUI", href: "https://halalmui.org/search-product" },
       // { name: 'Standar CPOB', href: '#' },
       // { name: 'Sertifikat TKDN', href: '#' }
     ],
     legal: [
-      { name: 'Kebijakan Privasi', href: '#' },
-      { name: 'Syarat dan Ketentuan', href: '#' },
-      { name: 'Kebijakan Mutu', href: '#' },
-      { name: 'Sanggahan', href: '#' }
-    ]
-  }
+      { name: "Kebijakan Privasi", href: "#" },
+      { name: "Syarat dan Ketentuan", href: "#" },
+      { name: "Kebijakan Mutu", href: "#" },
+      { name: "Sanggahan", href: "#" },
+    ],
+  };
 
   const socialLinks = [
     // { icon: <FaFacebook />, href: '#', label: 'Facebook' },
     // { icon: <FaTwitter />, href: '#', label: 'Twitter' },
-    { icon: <FaLinkedin />, href: '#', label: 'LinkedIn' },
-    { icon: <FaInstagram />, href: '#', label: 'Instagram' },
-    { icon: <FaYoutube />, href: '#', label: 'YouTube' }
-  ]
+    { icon: <FaLinkedin />, href: "#", label: "LinkedIn" },
+    { icon: <FaInstagram />, href: "#", label: "Instagram" },
+    { icon: <FaYoutube />, href: "#", label: "YouTube" },
+  ];
 
   return (
     <footer className="bg-gray-900 text-white">
@@ -176,7 +183,7 @@ const Footer = () => {
         <FaArrowUp />
       </button>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

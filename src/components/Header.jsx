@@ -1,27 +1,33 @@
-import React, { useState } from 'react'
-import { FaBars, FaTimes } from 'react-icons/fa'
-import logo from '../../sgf/logo.jpg'
+import React, { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
+import logo from "../../sgf/logo.jpg";
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { name: 'Beranda', href: '#home' },
-    { name: 'Tentang', href: '#about' },
-    { name: 'Tonggak Sejarah', href: '#milestones' },
-    { name: 'Produk', href: '#products' },
-    { name: 'Fasilitas', href: '#facility' },
-    { name: 'Kontak', href: '#contact' },
-  ]
+    { name: "Beranda", href: "#home" },
+    { name: "Tentang", href: "#about" },
+    { name: "Tonggak Sejarah", href: "#milestones" },
+    { name: "Produk", href: "#products" },
+    { name: "Fasilitas", href: "#facility" },
+    { name: "Kontak", href: "#contact" },
+  ];
 
   return (
     <header className="fixed w-full bg-white shadow-lg z-50">
       <nav className="container-custom">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
-            <img src={logo} alt="PT Sano Gratia Farma Logo" className="h-12 mr-3" />
+            <img
+              src={logo}
+              alt="PT Sano Gratia Farma Logo"
+              className="h-12 mr-3"
+            />
             <div>
-              <span className="text-2xl font-bold text-green-600">PT Sano Gratia Farma</span>
+              <span className="text-2xl font-bold text-green-600">
+                PT Sano Gratia Farma
+              </span>
             </div>
           </div>
 
@@ -64,7 +70,7 @@ const Header = () => {
         )}
       </nav>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

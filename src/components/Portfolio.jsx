@@ -1,9 +1,16 @@
-import React, { useState } from 'react'
-import { motion } from 'framer-motion'
-import { FaBuilding, FaHospital, FaGraduationCap, FaIndustry, FaRoad, FaLaptop } from 'react-icons/fa'
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import {
+  FaBuilding,
+  FaHospital,
+  FaGraduationCap,
+  FaIndustry,
+  FaRoad,
+  FaLaptop,
+} from "react-icons/fa";
 
 const Portfolio = () => {
-  const [selectedCategory, setSelectedCategory] = useState('all')
+  const [selectedCategory, setSelectedCategory] = useState("all");
 
   const projects = [
     {
@@ -11,9 +18,10 @@ const Portfolio = () => {
       title: "Kompleks Kantor Pemerintah",
       category: "government",
       icon: <FaBuilding />,
-      description: "Pengadaan dan instalasi untuk gedung administrasi pemerintah baru",
+      description:
+        "Pengadaan dan instalasi untuk gedung administrasi pemerintah baru",
       value: "Rp 15 Miliar",
-      year: "2023"
+      year: "2023",
     },
     {
       id: 2,
@@ -22,7 +30,7 @@ const Portfolio = () => {
       icon: <FaHospital />,
       description: "Pengadaan alat medis untuk 5 rumah sakit daerah",
       value: "Rp 25 Miliar",
-      year: "2023"
+      year: "2023",
     },
     {
       id: 3,
@@ -31,7 +39,7 @@ const Portfolio = () => {
       icon: <FaGraduationCap />,
       description: "Infrastruktur TI lengkap untuk universitas negeri",
       value: "Rp 8 Miliar",
-      year: "2022"
+      year: "2022",
     },
     {
       id: 4,
@@ -40,7 +48,7 @@ const Portfolio = () => {
       icon: <FaIndustry />,
       description: "Pengembangan infrastruktur untuk kawasan industri",
       value: "Rp 45 Miliar",
-      year: "2022"
+      year: "2022",
     },
     {
       id: 5,
@@ -49,7 +57,7 @@ const Portfolio = () => {
       icon: <FaRoad />,
       description: "Pengadaan material untuk proyek jalan tol nasional",
       value: "Rp 30 Miliar",
-      year: "2023"
+      year: "2023",
     },
     {
       id: 6,
@@ -58,23 +66,24 @@ const Portfolio = () => {
       icon: <FaLaptop />,
       description: "Platform transformasi digital untuk layanan pemerintah",
       value: "Rp 12 Miliar",
-      year: "2023"
-    }
-  ]
+      year: "2023",
+    },
+  ];
 
   const categories = [
-    { id: 'all', name: 'Semua Proyek' },
-    { id: 'government', name: 'Pemerintahan' },
-    { id: 'healthcare', name: 'Kesehatan' },
-    { id: 'education', name: 'Pendidikan' },
-    { id: 'industrial', name: 'Industri' },
-    { id: 'infrastructure', name: 'Infrastruktur' },
-    { id: 'technology', name: 'Teknologi' }
-  ]
+    { id: "all", name: "Semua Proyek" },
+    { id: "government", name: "Pemerintahan" },
+    { id: "healthcare", name: "Kesehatan" },
+    { id: "education", name: "Pendidikan" },
+    { id: "industrial", name: "Industri" },
+    { id: "infrastructure", name: "Infrastruktur" },
+    { id: "technology", name: "Teknologi" },
+  ];
 
-  const filteredProjects = selectedCategory === 'all' 
-    ? projects 
-    : projects.filter(project => project.category === selectedCategory)
+  const filteredProjects =
+    selectedCategory === "all"
+      ? projects
+      : projects.filter((project) => project.category === selectedCategory);
 
   return (
     <section id="portfolio" className="py-20 bg-gray-50">
@@ -86,7 +95,9 @@ const Portfolio = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Portfolio</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            Our Portfolio
+          </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Showcasing our successful projects across various sectors
           </p>
@@ -100,8 +111,8 @@ const Portfolio = () => {
               onClick={() => setSelectedCategory(category.id)}
               className={`px-6 py-2 rounded-full transition-colors duration-300 ${
                 selectedCategory === category.id
-                  ? 'bg-primary text-white'
-                  : 'bg-white text-gray-700 hover:bg-gray-100'
+                  ? "bg-primary text-white"
+                  : "bg-white text-gray-700 hover:bg-gray-100"
               }`}
             >
               {category.name}
@@ -129,7 +140,9 @@ const Portfolio = () => {
                 <div className="flex justify-between items-center">
                   <div>
                     <p className="text-sm text-gray-500">Project Value</p>
-                    <p className="font-semibold text-primary">{project.value}</p>
+                    <p className="font-semibold text-primary">
+                      {project.value}
+                    </p>
                   </div>
                   <div className="text-right">
                     <p className="text-sm text-gray-500">Year</p>
@@ -168,7 +181,7 @@ const Portfolio = () => {
         </motion.div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Portfolio
+export default Portfolio;

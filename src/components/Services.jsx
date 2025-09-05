@@ -1,23 +1,35 @@
-import React, { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { FaRocket, FaLaptopCode, FaChartBar, FaCloud, FaShieldAlt, FaLightbulb, FaArrowRight, FaCheckCircle } from 'react-icons/fa'
-import { servicesContent } from '../data/content'
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  FaRocket,
+  FaLaptopCode,
+  FaChartBar,
+  FaCloud,
+  FaShieldAlt,
+  FaLightbulb,
+  FaArrowRight,
+  FaCheckCircle,
+} from "react-icons/fa";
+import { servicesContent } from "../data/content";
 
 const Services = () => {
-  const [selectedService, setSelectedService] = useState(null)
-  const [hoveredIndex, setHoveredIndex] = useState(null)
-  
+  const [selectedService, setSelectedService] = useState(null);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+
   const iconMap = {
-    '🚀': <FaRocket />,
-    '💼': <FaLaptopCode />,
-    '📊': <FaChartBar />,
-    '☁️': <FaCloud />,
-    '🔒': <FaShieldAlt />,
-    '💡': <FaLightbulb />
-  }
+    "🚀": <FaRocket />,
+    "💼": <FaLaptopCode />,
+    "📊": <FaChartBar />,
+    "☁️": <FaCloud />,
+    "🔒": <FaShieldAlt />,
+    "💡": <FaLightbulb />,
+  };
 
   return (
-    <section id="services" className="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <section
+      id="services"
+      className="py-20 bg-gradient-to-b from-gray-50 to-white"
+    >
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -26,7 +38,7 @@ const Services = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <motion.span 
+          <motion.span
             className="inline-block px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm font-semibold mb-4"
             initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -36,10 +48,14 @@ const Services = () => {
             Our Services
           </motion.span>
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Solutions That Drive <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Success</span>
+            Solutions That Drive{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+              Success
+            </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Empowering businesses with cutting-edge technology and strategic insights that create lasting competitive advantage
+            Empowering businesses with cutting-edge technology and strategic
+            insights that create lasting competitive advantage
           </p>
         </motion.div>
 
@@ -60,22 +76,26 @@ const Services = () => {
                 className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 h-full border border-gray-100"
                 whileHover={{ y: -10 }}
               >
-                <motion.div 
+                <motion.div
                   className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-blue-400 to-purple-400 rounded-bl-full opacity-10"
                   animate={{
                     scale: hoveredIndex === index ? 1.2 : 1,
                   }}
                   transition={{ duration: 0.3 }}
                 />
-                
+
                 <div className="relative z-10">
                   <div className="text-4xl mb-4">
                     {service.icon || iconMap[service.icon] || <FaRocket />}
                   </div>
-                  <h3 className="text-2xl font-bold mb-3 text-gray-800">{service.title}</h3>
-                  <p className="text-gray-600 mb-4 line-clamp-2">{service.description}</p>
-                  
-                  <motion.div 
+                  <h3 className="text-2xl font-bold mb-3 text-gray-800">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 mb-4 line-clamp-2">
+                    {service.description}
+                  </p>
+
+                  <motion.div
                     className="flex items-center text-blue-600 font-semibold group"
                     whileHover={{ x: 5 }}
                   >
@@ -107,7 +127,9 @@ const Services = () => {
                 <div className="flex justify-between items-start mb-6">
                   <div>
                     <div className="text-4xl mb-4">{selectedService.icon}</div>
-                    <h3 className="text-3xl font-bold text-gray-800">{selectedService.title}</h3>
+                    <h3 className="text-3xl font-bold text-gray-800">
+                      {selectedService.title}
+                    </h3>
                   </div>
                   <button
                     onClick={() => setSelectedService(null)}
@@ -116,11 +138,15 @@ const Services = () => {
                     ×
                   </button>
                 </div>
-                
-                <p className="text-gray-600 mb-6">{selectedService.description}</p>
-                
+
+                <p className="text-gray-600 mb-6">
+                  {selectedService.description}
+                </p>
+
                 <div className="space-y-3">
-                  <h4 className="font-semibold text-lg text-gray-800 mb-3">Key Features:</h4>
+                  <h4 className="font-semibold text-lg text-gray-800 mb-3">
+                    Key Features:
+                  </h4>
                   {selectedService.features.map((feature, idx) => (
                     <motion.div
                       key={idx}
@@ -134,7 +160,7 @@ const Services = () => {
                     </motion.div>
                   ))}
                 </div>
-                
+
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -163,7 +189,7 @@ const Services = () => {
               transition={{
                 duration: 20,
                 repeat: Infinity,
-                ease: "linear"
+                ease: "linear",
               }}
               className="absolute -top-20 -right-20 w-60 h-60 bg-white opacity-10 rounded-full"
             />
@@ -174,19 +200,22 @@ const Services = () => {
               transition={{
                 duration: 25,
                 repeat: Infinity,
-                ease: "linear"
+                ease: "linear",
               }}
               className="absolute -bottom-20 -left-20 w-80 h-80 bg-white opacity-10 rounded-full"
             />
-            
+
             <div className="relative z-10 text-center">
-              <h3 className="text-3xl lg:text-4xl font-bold mb-4">Transform Your Business Today</h3>
+              <h3 className="text-3xl lg:text-4xl font-bold mb-4">
+                Transform Your Business Today
+              </h3>
               <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-                Join hundreds of companies that have accelerated their growth with our innovative solutions
+                Join hundreds of companies that have accelerated their growth
+                with our innovative solutions
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <motion.a 
-                  href="#contact" 
+                <motion.a
+                  href="#contact"
                   className="inline-flex items-center justify-center bg-white text-blue-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-colors duration-300"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -194,8 +223,8 @@ const Services = () => {
                   Start Your Journey
                   <FaArrowRight className="ml-2" />
                 </motion.a>
-                <motion.a 
-                  href="#portfolio" 
+                <motion.a
+                  href="#portfolio"
                   className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-blue-600 transition-all duration-300"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -208,7 +237,7 @@ const Services = () => {
         </motion.div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Services
+export default Services;

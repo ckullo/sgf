@@ -1,10 +1,13 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import { milestones } from '../data/content'
+import React from "react";
+import { motion } from "framer-motion";
+import { milestones } from "../data/content";
 
 const Milestones = () => {
   return (
-    <section id="milestones" className="py-20 bg-gradient-to-b from-white to-gray-50">
+    <section
+      id="milestones"
+      className="py-20 bg-gradient-to-b from-white to-gray-50"
+    >
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -17,14 +20,15 @@ const Milestones = () => {
             Perjalanan Kami
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Dari awal yang sederhana hingga menjadi nama terpercaya di industri farmasi
+            Dari awal yang sederhana hingga menjadi nama terpercaya di industri
+            farmasi
           </p>
         </motion.div>
 
         <div className="relative">
           {/* Timeline line */}
           <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-green-200 via-green-400 to-green-600 hidden lg:block"></div>
-          
+
           <div className="space-y-12">
             {milestones.map((milestone, index) => (
               <motion.div
@@ -34,14 +38,14 @@ const Milestones = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className={`flex flex-col lg:flex-row items-center ${
-                  index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
+                  index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
                 }`}
               >
                 <div className="flex-1 w-full">
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     className={`bg-white p-6 rounded-xl shadow-lg border-2 border-green-100 ${
-                      index % 2 === 0 ? 'lg:mr-8' : 'lg:ml-8'
+                      index % 2 === 0 ? "lg:mr-8" : "lg:ml-8"
                     }`}
                   >
                     <div className="flex items-center mb-3">
@@ -52,12 +56,10 @@ const Milestones = () => {
                     <h3 className="text-xl font-bold text-gray-800 mb-2">
                       {milestone.title}
                     </h3>
-                    <p className="text-gray-600">
-                      {milestone.description}
-                    </p>
+                    <p className="text-gray-600">{milestone.description}</p>
                   </motion.div>
                 </div>
-                
+
                 {/* Center dot */}
                 <div className="hidden lg:flex items-center justify-center w-12 h-12">
                   <motion.div
@@ -66,7 +68,7 @@ const Milestones = () => {
                     className="w-6 h-6 bg-green-500 rounded-full border-4 border-white shadow-lg"
                   />
                 </div>
-                
+
                 <div className="flex-1 hidden lg:block" />
               </motion.div>
             ))}
@@ -88,7 +90,7 @@ const Milestones = () => {
         </motion.div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Milestones
+export default Milestones;
