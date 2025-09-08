@@ -4,7 +4,8 @@
 export const companyInfo = {
   name: "PT Sano Gratia Farma",
   tagline: "Mitra Terpercaya Anda dalam Solusi Kesehatan",
-  description: "PT Sano Gratia Farma memulai pendistribusian produk perdana di bulan September 2017 dengan produk Salep Krim Pi Kang Shuang 5gr, sampai saat ini kami telah memasarkan produk TKS dan Solvopain di Indonesia.",
+  description: "",
+  // description: "PT Sano Gratia Farma memulai pendistribusian produk perdana di bulan September 2017 dengan produk Salep Krim Pi Kang Shuang 5gr, sampai saat ini kami telah memasarkan produk TKS dan Solvopain di Indonesia.",
   established: "2017",
   certifications: [
     "Tersertifikasi BPOM",
