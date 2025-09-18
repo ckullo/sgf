@@ -53,20 +53,28 @@ export const aboutContent = {
   
   values: [
     {
-      title: "Kualitas",
-      description: "Komitmen terhadap standar kualitas tertinggi dalam setiap produk"
+      title: "Integrity",
+      description: "Bertindak dengan menjunjung tinggi standar etika dan moral yang baik sebagai pondasi kesuksesan perusahaan"
     },
     {
-      title: "Inovasi",
-      description: "Terus berinovasi untuk menghadirkan solusi kesehatan terbaik"
+      title: "Teamwork",
+      description: "Menciptakan kerjasama tim yang kuat dan saling bersinergi dalam melaksanakan pekerjaan"
     },
     {
-      title: "Integritas",
-      description: "Menjalankan bisnis dengan etika dan transparansi penuh"
+      title: "Continuous Improvement",
+      description: "Meningkatkan kemampuan atau kapasitas diri, unit kerja, dan organisasi secara terus-menerus untuk mencapai hasil terbaik"
     },
     {
-      title: "Peduli",
-      description: "Mengutamakan kesehatan dan kesejahteraan masyarakat"
+      title: "Commitment",
+      description: "Melaksanakan pekerjaan dengan sepenuh hati untuk mencapai hasil terbaik"
+    },
+    {
+      title: "Innovation",
+      description: "Berfikir kreatif untuk mendapatkan gagasan dan ide yang inovatif dalam menjalankan pekerjaan"
+    },
+    {
+      title: "Respect",
+      description: "Kepedulian untuk saling menghormati dan menghargai satu sama lainnya"
     }
   ],
   
@@ -131,7 +139,7 @@ export const products = [
     size: "5 gram",
     regNumber: "DKL1842200229A1",
     price: "Rp 16.900",
-    image: "/sgf/pks.png",
+    image: "./sgf/pks.png",
     description: "Krim untuk kesehatan kulit dengan formula original",
     composition: [
       "Triamcinolone Acetonide Acetate 1 mg",
@@ -163,7 +171,7 @@ export const products = [
     size: "10 gram",
     regNumber: "DTL1842200129A1",
     price: "Rp 17.500",
-    image: "/sgf/tks.png",
+    image: "./sgf/tks.png",
     description: "Krim anti jamur dengan Ketoconazole untuk berbagai infeksi kulit",
     composition: [
       "Ketoconazole 20mg/g (2%)"
@@ -187,7 +195,7 @@ export const products = [
     size: "10 gram",
     regNumber: "QD171715591",
     price: "Rp 17.900",
-    image: "/sgf/Solvopain.png",
+    image: "./sgf/Solvopain.png",
     description: "Krim pereda nyeri untuk nyeri sendi dan otot",
     composition: [
       "Methyl Salicylate 102 mg",

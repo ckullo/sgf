@@ -15,7 +15,7 @@ function App() {
       <main>
         <Hero />
         <About />
-        <Milestones />
+        {/* <Milestones /> */}
         <Products />
         <Facility />
         <Contact />

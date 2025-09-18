@@ -9,12 +9,12 @@ import {
   FaTimes,
 } from "react-icons/fa";
 import { manufacturingFacility } from "../data/content";
-import image1 from "../../sgf/1.jpg";
-import image2 from "../../sgf/2.jpg";
-import image3 from "../../sgf/3.jpg";
-import image4 from "../../sgf/4.jpg";
-import image5 from "../../sgf/5.jpg";
-import factoryImage from "../../sgf/pabrik.png";
+import image1 from "../assets/1.jpg";
+import image2 from "../assets/2.jpg";
+import image3 from "../assets/3.jpg";
+import image4 from "../assets/4.jpg";
+import image5 from "../assets/5.jpg";
+import factoryImage from "../assets/pabrik.png";
 
 const facilityImages = [image1, image2, image3, image4, image5];
 const AUTOPLAY_INTERVAL = 5000; // 5 seconds

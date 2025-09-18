@@ -6,7 +6,7 @@ import {
   FaPills,
   FaFlask,
   FaLeaf,
-  FaExclamationCircle,
+  FaExclamationCircle
 } from "react-icons/fa";
 import { products } from "../data/content";
 import { FaTriangleExclamation } from "react-icons/fa6";

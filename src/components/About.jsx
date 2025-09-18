@@ -1,7 +1,18 @@
 import React from "react";
+import { aboutContent } from "../data/content";
 import { motion } from "framer-motion";
 import { FaCheckCircle, FaUsers, FaAward, FaHandshake } from "react-icons/fa";
-import distributionImage from "../../sgf/distribusi.png";
+import { FaUserShield, FaChartLine, FaRegHeart, FaLightbulb, FaHandHoldingHeart } from "react-icons/fa";
+import distributionImage from "../assets/distribusi.png";
+
+const valueIcons = [
+  <FaUserShield className="text-3xl text-primary mb-2" />,      // Integrity
+  <FaUsers className="text-3xl text-primary mb-2" />,           // Teamwork
+  <FaChartLine className="text-3xl text-primary mb-2" />,       // Continuous Improvement
+  <FaRegHeart className="text-3xl text-primary mb-2" />,        // Commitment
+  <FaLightbulb className="text-3xl text-primary mb-2" />,       // Innovation
+  <FaHandHoldingHeart className="text-3xl text-primary mb-2" />,// Respect
+];
 
 const About = () => {
   const features = [
@@ -133,6 +144,31 @@ const About = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="mt-16"
+        >
+          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+            Nilai Perusahaan
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {aboutContent.values.map((value, idx) => (
+              <div
+                key={idx}
+                className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center transition-transform duration-300 hover:-translate-y-2 hover:scale-105"
+                style={{ willChange: "transform" }}
+              >
+                {valueIcons[idx]}
+                <h4 className="text-xl font-semibold mb-2 text-center">{value.title}</h4>
+                <p className="text-gray-600 text-center">{value.description}</p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
           className="mt-20 text-center"
@@ -146,6 +182,8 @@ const About = () => {
             className="w-full h-auto rounded-2xl shadow-xl object-contain"
           />
         </motion.div>
+
+
       </div>
     </section>
   );
