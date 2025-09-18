@@ -9,14 +9,27 @@ import {
   FaTimes,
 } from "react-icons/fa";
 import { manufacturingFacility } from "../data/content";
-import image1 from "../assets/1.jpg";
-import image2 from "../assets/2.jpg";
-import image3 from "../assets/3.jpg";
-import image4 from "../assets/4.jpg";
-import image5 from "../assets/5.jpg";
+import image1 from "../assets/facility-1.jpeg";
+import image2 from "../assets/facility-2.jpeg";
+import image3 from "../assets/facility-3.jpeg";
+import image4 from "../assets/facility-4.jpeg";
+import image5 from "../assets/RnD.jpeg";
+import video1 from "../assets/facility-1.mp4";
+import video2 from "../assets/facility-2.mp4";
+import video3 from "../assets/facility-3.mp4";
 import factoryImage from "../assets/pabrik.png";
 
-const facilityImages = [image1, image2, image3, image4, image5];
+const facilityMedia = [
+  { type: "image", src: image1 },
+  { type: "image", src: image2 },
+  { type: "image", src: image3 },
+  { type: "image", src: image4 },
+  { type: "image", src: image5 },
+  { type: "video", src: video1 },
+  { type: "video", src: video2 },
+  { type: "video", src: video3 },
+];
+
 const AUTOPLAY_INTERVAL = 5000; // 5 seconds
 
 const Facility = () => {
@@ -44,8 +57,8 @@ const Facility = () => {
 
   const setSlide = (newIndex, newDirection) => {
     if (newIndex < 0) {
-      newIndex = facilityImages.length - 1;
-    } else if (newIndex >= facilityImages.length) {
+      newIndex = facilityMedia.length - 1;
+    } else if (newIndex >= facilityMedia.length) {
       newIndex = 0;
     }
     setDirection(newDirection);
@@ -180,22 +193,35 @@ const Facility = () => {
             onMouseLeave={() => setIsHovered(false)}
           >
             <AnimatePresence initial={false} custom={direction}>
-              <motion.img
-                key={currentIndex}
-                src={facilityImages[currentIndex]}
-                alt={`Fasilitas Produksi ${currentIndex + 1}`}
-                custom={direction}
-                variants={slideVariants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                transition={{
-                  x: { type: "spring", stiffness: 300, damping: 30 },
-                  opacity: { duration: 0.2 },
-                }}
-                className="absolute w-full h-full object-cover cursor-pointer"
-                onClick={() => setIsModalOpen(true)}
-              />
+              {facilityMedia[currentIndex].type === "video" ? (
+                <motion.video
+                  key={currentIndex}
+                  src={facilityMedia[currentIndex].src}
+                  autoPlay
+                  loop
+                  muted
+                  controls
+                  className="absolute w-full h-full object-cover cursor-pointer"
+                  onClick={() => setIsModalOpen(true)}
+                />
+              ) : (
+                <motion.img
+                  key={currentIndex}
+                  src={facilityMedia[currentIndex].src}
+                  alt={`Fasilitas Produksi ${currentIndex + 1}`}
+                  custom={direction}
+                  variants={slideVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{
+                    x: { type: "spring", stiffness: 300, damping: 30 },
+                    opacity: { duration: 0.2 },
+                  }}
+                  className="absolute w-full h-full object-cover cursor-pointer"
+                  onClick={() => setIsModalOpen(true)}
+                />
+              )}
             </AnimatePresence>
 
             <button
@@ -214,15 +240,14 @@ const Facility = () => {
             </button>
 
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
-              {facilityImages.map((_, index) => (
+              {facilityMedia.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setSlide(index, index > currentIndex ? 1 : -1)}
-                  className={`w-3 h-3 rounded-full transition-colors ${
-                    currentIndex === index
+                  className={`w-3 h-3 rounded-full transition-colors ${currentIndex === index
                       ? "bg-blue-600"
                       : "bg-white/70 hover:bg-white"
-                  }`}
+                    }`}
                   aria-label={`Go to slide ${index + 1}`}
                 />
               ))}
@@ -253,21 +278,33 @@ const Facility = () => {
                   className="relative w-full h-full max-w-5xl max-h-[90vh] overflow-hidden rounded-lg shadow-2xl"
                 >
                   <AnimatePresence initial={false} custom={direction}>
-                    <motion.img
-                      key={currentIndex}
-                      src={facilityImages[currentIndex]}
-                      alt={`Fasilitas Produksi ${currentIndex + 1} zoomed in`}
-                      custom={direction}
-                      variants={slideVariants}
-                      initial="enter"
-                      animate="center"
-                      exit="exit"
-                      transition={{
-                        x: { type: "spring", stiffness: 300, damping: 30 },
-                        opacity: { duration: 0.2 },
-                      }}
-                      className="absolute inset-0 w-full h-full object-contain"
-                    />
+                    {facilityMedia[currentIndex].type === "video" ? (
+                      <motion.video
+                        key={currentIndex}
+                        src={facilityMedia[currentIndex].src}
+                        autoPlay
+                        loop
+                        muted
+                        controls
+                        className="absolute inset-0 w-full h-full object-contain"
+                      />
+                    ) : (
+                      <motion.img
+                        key={currentIndex}
+                        src={facilityMedia[currentIndex].src}
+                        alt={`Fasilitas Produksi ${currentIndex + 1} zoomed in`}
+                        custom={direction}
+                        variants={slideVariants}
+                        initial="enter"
+                        animate="center"
+                        exit="exit"
+                        transition={{
+                          x: { type: "spring", stiffness: 300, damping: 30 },
+                          opacity: { duration: 0.2 },
+                        }}
+                        className="absolute inset-0 w-full h-full object-contain"
+                      />
+                    )}
                   </AnimatePresence>
                 </motion.div>
               </motion.div>
