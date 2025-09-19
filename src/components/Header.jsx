@@ -8,7 +8,7 @@ const Header = () => {
   const navItems = [
     { name: "Beranda", href: "#home" },
     { name: "Tentang", href: "#about" },
-    { name: "Tonggak Sejarah", href: "#milestones" },
+    // { name: "Tonggak Sejarah", href: "#milestones" },
     { name: "Produk", href: "#products" },
     { name: "Fasilitas", href: "#facility" },
     { name: "Kontak", href: "#contact" },
