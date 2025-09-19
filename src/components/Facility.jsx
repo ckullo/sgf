@@ -14,9 +14,11 @@ import image2 from "../assets/facility-2.jpeg";
 import image3 from "../assets/facility-3.jpeg";
 import image4 from "../assets/facility-4.jpeg";
 import image5 from "../assets/RnD.jpeg";
-import video1 from "../assets/facility-1.mp4";
-import video2 from "../assets/facility-2.mp4";
-import video3 from "../assets/facility-3.mp4";
+import video1 from "../assets/video-1.mp4";
+import video2 from "../assets/video-2.mp4";
+import video3 from "../assets/video-3.mp4";
+import video4 from "../assets/video-4.mp4";
+import video5 from "../assets/video-5.mp4";
 import factoryImage from "../assets/pabrik.png";
 
 const facilityMedia = [
@@ -28,6 +30,8 @@ const facilityMedia = [
   { type: "video", src: video1 },
   { type: "video", src: video2 },
   { type: "video", src: video3 },
+  { type: "video", src: video4 },
+  { type: "video", src: video5 },
 ];
 
 const AUTOPLAY_INTERVAL = 5000; // 5 seconds
